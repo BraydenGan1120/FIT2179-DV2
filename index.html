@@ -28,6 +28,12 @@
     <!--SECTION 1: Where Does Australia Stand? -->
     <section id="s1">
         <h1>Section 1</h1>
+        <label for="yearSelect">Year:</label>
+        <select id="yearSelect" name="yearSelect">
+            <option value="2025" selected>2025</option>
+            <option value="2024">2024</option>
+            <option value="2023">2023</option>
+        </select>
         <div id="choropleth"></div>  <!-- World map -->
         <div id="chart2"></div>  <!-- Slope chart -->
         <div id="chart3"></div>  <!-- Dumbbell chart-->
@@ -72,9 +78,36 @@
 
     <script src="js/events.js"></script>
     <script>
-        vegaEmbed('#choropleth', 'js/Choropleth_GAIRI.json').catch(function(err){
-            console.error('Vega embed error:', err);
+        const specUrl = 'js/Choropleth_GAIRI.json';
+        const fileMap = {
+            '2025': 'data/2025-GAIRI-data-1.csv',
+            '2024': 'data/2024-GAIRI-data.csv',
+            '2023': 'data/2023-GAIRI-data.csv'
+        };
+        let baseSpec = null;
+
+        async function loadBaseSpec() {
+            const resp = await fetch(specUrl);
+            baseSpec = await resp.json();
+            updateEmbed(document.getElementById('yearSelect').value);
+        }
+
+        function updateEmbed(year) {
+            if (!baseSpec) return;
+            const spec = JSON.parse(JSON.stringify(baseSpec));
+            if (spec.transform && spec.transform[0] && spec.transform[0].from && spec.transform[0].from.data) {
+                spec.transform[0].from.data.url = fileMap[year];
+            }
+            vegaEmbed('#choropleth', spec).catch(function(err){
+                console.error('Vega embed error:', err);
+            });
+        }
+
+        document.getElementById('yearSelect').addEventListener('change', function(e){
+            updateEmbed(e.target.value);
         });
+
+        loadBaseSpec().catch(err => console.error('Failed to load spec:', err));
     </script>
 </body>
 
