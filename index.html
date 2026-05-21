@@ -28,7 +28,7 @@
     <!--SECTION 1: Where Does Australia Stand? -->
     <section id="s1">
         <h1>Section 1</h1>
-        <div src="js/Choropleth_GAIRI.json"></div>  <!-- World map -->
+        <div id="choropleth"></div>  <!-- World map -->
         <div id="chart2"></div>  <!-- Slope chart -->
         <div id="chart3"></div>  <!-- Dumbbell chart-->
         <div id="chart4"></div>  <!-- Bubble chart -->
@@ -71,6 +71,11 @@
     </footer>
 
     <script src="js/events.js"></script>
+    <script>
+        vegaEmbed('#choropleth', 'js/Choropleth_GAIRI.json').catch(function(err){
+            console.error('Vega embed error:', err);
+        });
+    </script>
 </body>
 
 </html>
