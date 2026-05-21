@@ -80,9 +80,9 @@
     <script>
         const specUrl = 'js/Choropleth_GAIRI.json';
         const fileMap = {
-            '2025': 'data/2025-GAIRI-data-1.csv',
-            '2024': 'data/2024-GAIRI-data.csv',
-            '2023': 'data/2023-GAIRI-data.csv'
+            '2025': 'https://raw.githubusercontent.com/BraydenGan1120/FIT2179-DV2/main/data/2025-GAIRI-data-1.csv',
+            '2024': 'https://raw.githubusercontent.com/BraydenGan1120/FIT2179-DV2/main/data/2024-GAIRI-data.csv',
+            '2023': 'https://raw.githubusercontent.com/BraydenGan1120/FIT2179-DV2/main/data/2023-GAIRI-data.csv'
         };
         let baseSpec = null;
 
@@ -98,7 +98,7 @@
             if (spec.transform && spec.transform[0] && spec.transform[0].from && spec.transform[0].from.data) {
                 spec.transform[0].from.data.url = fileMap[year];
             }
-            vegaEmbed('#choropleth', spec).catch(function(err){
+            vegaEmbed('#choropleth', spec, {actions: false}).catch(function(err){
                 console.error('Vega embed error:', err);
             });
         }
