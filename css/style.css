@@ -113,3 +113,30 @@ body {
 .author {
     color: var(--MLB);
 }
+
+.chart-container {
+    background-color: var(--Medium-Blue);
+    border: 1px solid var(--Light-Blue);
+    padding: 20px;
+    border-radius: 12px;
+    padding: 20px;
+}
+.chart-container h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--Dark-Blue);
+    margin: 10px auto 5px;
+}
+.chart-container p {
+    font-family: "Akt", sans-serif;
+    color: var(--Light-Blue);
+    font-size: 14px;
+    margin: 0 auto 5px;
+}
+.s1 h1{
+    font-family: "Playfair Display", serif;
+    font-size: 48px;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+

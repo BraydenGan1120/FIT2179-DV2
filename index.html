@@ -51,16 +51,24 @@
     <div class="section">
         <span class="section-num"> Section One</span>
     </div>
-    <section id="s1">
+    <section class="s1">
         
         <h1>Where Does Australia Stand?</h1>
+        <p> say something here</p>
+
+        <div class="chart-container">
+            <h3>AI Readiness Index of the World</h3>
+            <p>Global overview of AI readiness across different countries</p>
+            <div id="choropleth"></div>  <!-- World map -->
+        </div>
+
+
         <label for="yearSelect">Year:</label>
         <select id="yearSelect" name="yearSelect">
             <option value="2025" selected>2025</option>
             <option value="2024">2024</option>
             <option value="2023">2023</option>
         </select>
-        <div id="choropleth"></div>  <!-- World map -->
         
         <div id="chart2"></div>  <!-- Slope chart -->
         <div id="chart3"></div>  <!-- Dumbbell chart-->
@@ -72,7 +80,7 @@
     <div class="section">
         <span class="section-num"> Section Two</span>
     </div>
-    <section id="s2">
+    <section class="s2">
         <h1>Inside Australia</h1>
         <div id="chart5"></div>  <!-- Australia map -->
         <div id="chart6"></div>  <!-- Annotated Line Chart -->
@@ -85,7 +93,7 @@
     <div class="section">
         <span class="section-num"> Section Three</span>
     </div>
-    <section id="s3">
+    <section class="s3">
         <h1>What's Holding Australia Back?</h1>
         <div id="chart9"></div>  <!-- Diverging Bar Chart -->
         <div id="chart10"></div>  <!-- Radar Chart -->
@@ -97,7 +105,7 @@
     <div class="section">
         <span class="section-num"> Section Four</span>
     </div>
-    <section id="s4">
+    <section class="s4">
         <h1>AI Impact in Australia</h1>
         <div id="chart12"></div>  <!-- Stacked Area Chart -->
         <div id="chart13"></div>  <!-- Dot Strip Plot (may change) -->
@@ -105,11 +113,13 @@
         <p>This is the content for Section 4.</p>
     </section>
 
+    <!-- FOOTER -->
     <div class="footer">
         <p>Data Sources: Links Placeholder</p>
         <p class="author">Created by Brayden Gan · 35684534 · FIT2179 Data Visualization II · 29 May 2026 ·  <a href="https://github.com/braydengan1120">GitHub</a></p>
     </div>
 
+    <!-- ACTIONS -->
     <script src="js/events.js"></script>
     <script>
         const specUrl = 'js/Choropleth_GAIRI.json';
