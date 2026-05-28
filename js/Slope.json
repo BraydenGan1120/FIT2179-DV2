@@ -1,0 +1,67 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 500,
+  "height": 500,
+  "background": "#23395B",
+  
+  "data": {"values":[
+    {"group": "Australia", "year": "2023", "score": 73.89, "rank": 12},
+    {"group": "Australia", "year": "2024", "score": 76.45, "rank": 10},
+    {"group": "Australia", "year": "2025", "score": 75.73, "rank": 9},
+
+    {"group": "United States", "year": "2023", "score": 84.80, "rank": 1},
+    {"group": "United States", "year": "2024", "score": 87.03, "rank": 1},
+    {"group": "United States", "year": "2025", "score": 88.36, "rank": 1},
+
+    {"group": "China", "year": "2023", "score": 70.94, "rank": 16},
+    {"group": "China", "year": "2024", "score": 72.01, "rank": 23},
+    {"group": "China", "year": "2025", "score": 76.27, "rank": 8},
+
+    {"group": "United Kingdom", "year": "2023", "score": 78.57, "rank": 3},
+    {"group": "United Kingdom", "year": "2024", "score": 78.88, "rank": 5},
+    {"group": "United Kingdom", "year": "2025", "score": 77.75, "rank": 3},
+
+    {"group": "France", "year": "2023", "score": 76.07, "rank": 6},
+    {"group": "France", "year": "2024", "score": 79.36, "rank": 4},
+    {"group": "France", "year": "2025", "score": 80.81, "rank": 2},
+
+    {"group": "Japan", "year": "2023", "score": 75.08, "rank": 9},
+    {"group": "Japan", "year": "2024", "score": 75.75, "rank": 12},
+    {"group": "Japan", "year": "2025", "score": 72.24, "rank": 14},
+
+    {"group": "Singapore", "year": "2023", "score": 81.97, "rank": 2},
+    {"group": "Singapore", "year": "2024", "score": 84.25, "rank": 2},
+    {"group": "Singapore", "year": "2025", "score": 76.42, "rank": 7}
+  ]},
+
+  "mark": {"type": "line", "point":{"filled":true, "size":80}, "strokeWidth": 3},
+  
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "ordinal",
+      "axis":{"title": "Year", "labelColor": "white", "titleColor": "#161925"}
+    },
+
+    "y": {
+      "field": "score",
+      "type": "quantitative",
+      "title": "AI Readiness Score",
+      "scale": {"domain": [65, 100]},
+      "axis": {"labelColor": "white", "titleColor": "#161925"}
+    },
+
+    "color": {"field": "group", "type": "nominal", "legend": {"title": "Country", "labelColor": "white", "titleColor": "#161925"}},
+
+    "detail": {"field": "group"},
+
+    "tooltip": [
+      {"field": "group", "type": "nominal", "title": "Country"},
+      {"field": "year", "type": "ordinal", "title": "Year"},
+      {"field": "score", "type": "quantitative", "title": "Score"},
+      {"field": "rank", "type": "quantitative", "title": "Rank"}
+    ]
+  }
+}
+
+

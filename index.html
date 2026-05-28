@@ -73,11 +73,20 @@
         </div>
 
 
+        <div class="chart-container2">
+            <h3>Growth in Global AI Readiness Rankings</h3>
+            <p>This slope graph compares the AI readiness scores of leading countries from 2023 to 2025, highlighting how nations are progressing in artificial intelligence capability and preparedness. 
+                The United States consistently leads the rankings, while China and France show strong upward growth over time. </p>
+            <br>
+            <p>Australia remains competitive among advanced economies, improving in 2024 before experiencing a slight decline in 2025, reflecting the fast-moving and highly competitive global AI race.</p>
+            
+            <div id="chart2"></div>  <!-- Slope chart -->
+
+        </div>
         
-        <div id="chart2"></div>  <!-- Slope chart -->
         <div id="chart3"></div>  <!-- Dumbbell chart-->
         <div id="chart4"></div>  <!-- Bubble chart -->
-        <p>This is the content for Section 1.</p>
+        <p>Data Sources: Links Placeholder</p>
     </section>
 
     <!--SECTION 2: Inside Australia -->
@@ -124,6 +133,7 @@
     </div>
 
     <!-- ACTIONS -->
+    <!-- Choropleth Map -->
     <script>
         const specUrl = 'js/Choropleth_GAIRI.json';
         const fileMap = {
@@ -155,6 +165,14 @@
         });
 
         loadBaseSpec().catch(err => console.error('Failed to load spec:', err));
+    </script>
+
+    <!-- Slope Chart -->
+    <script>
+        vegaEmbed('#chart2', 'js/Slope.json', {actions: false}).catch(function(err){
+            console.error('Vega embed error:', err);
+        });
+            
     </script>
 </body>
 
