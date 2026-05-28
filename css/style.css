@@ -1,6 +1,47 @@
-h1 {
+:root {
+    --Dark-Blue: #161925;
+    --MDB: #23395B;
+    --Medium-Blue: #406E8E;
+    --MLB: #8ea8c3;
+    --Light-Blue: #CBF7ED;
+}
+
+body {
+    background-color: var(--Dark-Blue);
+    color: var(--Light-Blue);
+}
+.header {
+    background: linear-gradient(to bottom, var(--Dark-Blue), var(--MDB));
+    padding: 80px 40px 60px;
+    text-align: center;
+    border-bottom: 1px solid var(--Light-Blue);
+}
+
+.section-label{
+    color: var(--MLB);
+    font-family: "Akt", sans-serif;
+    font-style: normal;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin: 0 auto 15px;
+}
+
+.header h1 {
   font-family: "Playfair Display", serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
+  Color:WHITE;
+  font-size: 88px;
+  font-weight: 900;
+  margin: 0 auto 15px;
+
+}
+
+.header p {
+    font-family: "Akt", sans-serif;
+    color: var(--MLB);
+    font-style: normal;
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto 30px;
 }
