@@ -114,15 +114,36 @@ body {
     color: var(--MLB);
 }
 
+.s1 h1{
+    font-family: "Playfair Display", serif;
+    font-size: 48px;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.s1 p {
+    font-family: "Akt", sans-serif;
+    color: var(--MLB);
+    font-size: 18px;
+    max-width: 777px;
+    margin-bottom: 30px;
+}
+
 .chart-container {
-    background-color: var(--Medium-Blue);
+    display: flex;
+    font-family: "Akt", sans-serif;
+    font-size: 14px;
+    flex-direction: column;
+    align-items: left;
+    background-color: var(--MDB);
     border: 1px solid var(--Light-Blue);
-    padding: 20px;
-    border-radius: 12px;
-    padding: 20px;
+    max-width: 1000px;
+    padding: 30px;
+    border-radius: 20px;
 }
 .chart-container h3 {
-    font-size: 24px;
+    font-family: "Playfair Display", serif;
+    font-size: 36px;
     font-weight: 700;
     color: var(--Dark-Blue);
     margin: 10px auto 5px;
@@ -133,10 +154,10 @@ body {
     font-size: 14px;
     margin: 0 auto 5px;
 }
-.s1 h1{
-    font-family: "Playfair Display", serif;
-    font-size: 48px;
-    font-weight: 900;
-    margin-bottom: 20px;
-}
 
+#choropleth{
+    background-color: var(--MDB);
+    max-width: 100%;
+    padding: 20px;
+    width: 800px;
+}
