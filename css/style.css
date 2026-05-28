@@ -41,7 +41,75 @@ body {
     font-family: "Akt", sans-serif;
     color: var(--MLB);
     font-style: normal;
-    font-size: 18px;
-    max-width: 800px;
+    font-size: 22px;
+    max-width: 1000px;
     margin: 0 auto 30px;
+}
+
+.stats-row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-rank {
+    font-family: "Akt", sans-serif;
+    color: white;
+    font-size: 44px;
+    font-weight: 700;
+    display: block;
+}
+
+.stat-label {
+    font-family: "Akt", sans-serif;
+    color: var(--MLB);
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 24px 40px 0;
+}
+
+.section-num {
+    font-family: "Akt", sans-serif;
+    color: var(--Light-Blue);
+    letter-spacing: 2px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+::after, ::before {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid var(--Light-Blue);
+}
+
+.footer {
+    background: linear-gradient(to top, var(--Dark-Blue), var(--MDB));
+    padding: 40px;
+    text-align: center;
+    font-family: "Akt", sans-serif;
+    font-size: 0.8em;
+    color: var(--MDB);
+    border-top: 1px solid var(--Light-Blue);
+}
+
+.footer p {
+    color: var(--MLB);
+    margin: 5px 0;
+}
+
+.author {
+    color: var(--MLB);
 }
