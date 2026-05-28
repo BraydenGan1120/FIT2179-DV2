@@ -1,13 +1,14 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "AI Readiness Index of the World",
-    "width": 1000,
+    "width": 800,
     "height": 500,
     "projection": {"type": "equalEarth"},
+
     "data": {
         "url": "https://raw.githubusercontent.com/BraydenGan1120/FIT2179-DV2/main/maps/World.json",
         "format": {"type": "topojson", "feature": "World"}
     },
+
     "transform": [
         {
             "lookup": "properties.NAME",
@@ -16,17 +17,18 @@
                     "url": "https://raw.githubusercontent.com/BraydenGan1120/FIT2179-DV2/main/data/2025-GAIRI-data-1.csv"
                 },
                 "key": "Country",
-                "fields": ["Total Score"]
+                "fields": ["Total Score", "Rank"]
             }
         }
     ],
+    
     "mark": {"type": "geoshape"},
     "encoding": {
         "color": {
             "field": "Total Score",
             "type": "quantitative",
             "scale": {"scheme": "blues", "domain": [0, 100]},
-            "legend": {"title": "GAIRI Total Score"}
+            "legend": {"title": "AI Readiness Score"}
         },
             "tooltip": [
             {"field": "properties.NAME", "type": "nominal", "title": "Country"},
