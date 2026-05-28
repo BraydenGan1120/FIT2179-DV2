@@ -59,34 +59,36 @@
             However, it still falls behind countries like the United States and China because they invest much more money into AI technology. 
         </p>
 
-        <div class="chart-container">
-            <h3>AI Readiness Index of the World</h3>
-            <p>Global overview of AI readiness across different countries</p>
-            <label for="yearSelect">Select a year:</label>
-            <select id="yearSelect" name="yearSelect">
-                <option value="2025" selected>2025</option>
-                <option value="2024">2024</option>
-                <option value="2023">2023</option>
-            </select>
-            <div id="choropleth"></div>  <!-- World map -->
+        <div class="chartrow">
+            <div class="chart-container">
+                <h3>AI Readiness Index of the World</h3>
+                <p>Global overview of AI readiness across different countries</p>
+                <label for="yearSelect">Select a year:</label>
+                <select id="yearSelect" name="yearSelect">
+                    <option value="2025" selected>2025</option>
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                </select>
+                <div id="choropleth"></div>  <!-- World map -->
+                <p id="datasource">Data Sources: Links Placeholder</p>
+            </div>
 
+
+            <div class="chart-container2">
+                <h3>Growth in Global AI Readiness Rankings</h3>
+                <p>This slope graph compares the AI readiness scores of leading countries from 2023 to 2025, highlighting how nations are progressing in artificial intelligence capability and preparedness. 
+                    The United States consistently leads the rankings, while China and France show strong upward growth over time. </p>
+                <br>
+                <p>Australia remains competitive among advanced economies, improving in 2024 before experiencing a slight decline in 2025, reflecting the fast-moving and highly competitive global AI race.</p>
+                
+                <div id="chart2"></div>  <!-- Slope chart -->
+
+            </div>
         </div>
 
 
-        <div class="chart-container2">
-            <h3>Growth in Global AI Readiness Rankings</h3>
-            <p>This slope graph compares the AI readiness scores of leading countries from 2023 to 2025, highlighting how nations are progressing in artificial intelligence capability and preparedness. 
-                The United States consistently leads the rankings, while China and France show strong upward growth over time. </p>
-            <br>
-            <p>Australia remains competitive among advanced economies, improving in 2024 before experiencing a slight decline in 2025, reflecting the fast-moving and highly competitive global AI race.</p>
-            
-            <div id="chart2"></div>  <!-- Slope chart -->
-
-        </div>
-        
         <div id="chart3"></div>  <!-- Dumbbell chart-->
         <div id="chart4"></div>  <!-- Bubble chart -->
-        <p>Data Sources: Links Placeholder</p>
     </section>
 
     <!--SECTION 2: Inside Australia -->

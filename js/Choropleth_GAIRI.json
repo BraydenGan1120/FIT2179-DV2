@@ -36,7 +36,8 @@
             "field": "Total Score",
             "type": "quantitative",
             "scale": {"scheme": "oranges", "domain": [0, 100]},
-            "legend": {"title": "AI Readiness Score"}
+            "legend": {"title": "AI Readiness Score", "orient": "bottom", "direction": "horizontal", "titleColor":"white", "labelColor":"white"}
+            
         },
             "tooltip": [
             {"field": "properties.NAME", "type": "nominal", "title": "Country"},
