@@ -122,14 +122,15 @@
             </article>
         </div>
 
-        <div class="placeholder-grid">
-            <article class="chart-container">
+        <div class="chartrow chartrow-waffle">
+            <article class="chart-container chart-container-large">
                 <div class="chart-header stacked">
                     <h3>Business Adoption Trend</h3>
                     <p>Reserved for the bar and line chart showing how AI adoption changes over time.</p>
                 </div>
                 <div id="chart7"></div>
             </article>
+
             <article class="placeholder-card">
                 <div class="chart-header stacked">
                     <h3>AI Adoption Among Australian Businesses</h3>
@@ -262,9 +263,16 @@
         });
     </script>
 
-    <!-- Slope Chart -->
+    <!-- Waffle Chart -->
     <script>
         vegaEmbed('#chart8', 'js/waffle.json', {actions: false}).catch(function(err){
+            console.error('Vega embed error:', err);
+        });
+    </script>
+
+    <!-- Bar-Line Chart -->
+    <script>
+        vegaEmbed('#chart7', 'js/bar-line.json', {actions: false}).catch(function(err){
             console.error('Vega embed error:', err);
         });
     </script>

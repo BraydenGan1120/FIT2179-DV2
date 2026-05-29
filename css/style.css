@@ -217,6 +217,12 @@ a {
     align-items: stretch;
 }
 
+.chartrow-waffle {
+    grid-template-columns: minmax(0, 1.2fr) minmax(420px, 0.8fr);
+    align-items: stretch;
+    margin-top: 20px;
+}
+
 .chart-container,
 .chart-container2 {
     min-width: 0;

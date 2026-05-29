@@ -1,0 +1,194 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "width": 720,
+  "height": 400,
+
+  "background": "transparent",
+
+  "data": {
+    "values": [
+      {
+        "Industry": "Agriculture, F&F",
+        "AdoptionRate": 56.2,
+        "GrowthRate": 2.5
+      },
+      {
+        "Industry": "Construction",
+        "AdoptionRate": 63.5,
+        "GrowthRate": 3.4
+      },
+      {
+        "Industry": "Distribution",
+        "AdoptionRate": 66.5,
+        "GrowthRate": 2.6
+      },
+      {
+        "Industry": "Health & Education",
+        "AdoptionRate": 66.2,
+        "GrowthRate": 4.2
+      },
+      {
+        "Industry": "Hospitality",
+        "AdoptionRate": 9.4,
+        "GrowthRate": 2.5
+      },
+      {
+        "Industry": "Manufactuing",
+        "AdoptionRate": 0,
+        "GrowthRate": 0.325
+      },
+      {
+        "Industry": "Retail",
+        "AdoptionRate": 33.8,
+        "GrowthRate": 2.2
+      },
+      {
+        "Industry": "Services",
+        "AdoptionRate": 59,
+        "GrowthRate": 0.8
+      }
+    ]
+  },
+
+  "layer": [
+
+    {
+      "mark": {
+        "type": "bar",
+        "opacity": 1,
+        "size": 52
+      },
+
+      "encoding": {
+
+        "x": {
+          "field": "Industry",
+          "type": "nominal",
+
+          "axis": {
+            "title": "Industry Sector",
+            "labelAngle": 0,
+            "labelColor": "white",
+            "titleColor": "white"
+          }
+        },
+
+        "y": {
+          "field": "AdoptionRate",
+          "type": "quantitative",
+
+          "title": "AI Adoption Rate (%)",
+
+          "scale": {
+            "domain": [0, 100]
+          },
+
+          "axis": {
+            "grid":true,
+            "gridWidth":1,
+            "gridOpacity":1,
+
+            "labelColor": "#E67E22",
+            "titleColor": "#E67E22",
+            "gridColor": "white"
+          }
+        },
+
+        "color": {
+          "value": "#E67E22"
+        },
+
+        "tooltip": [
+          {
+            "field": "Industry",
+            "title": "Sector"
+          },
+          {
+            "field": "AdoptionRate",
+            "title": "Adoption Rate (%)"
+          },
+          {
+            "field": "GrowthRate",
+            "title": "QoQ Growth (%)"
+          }
+        ]
+      }
+    },
+
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 4,
+        "point": {
+          "filled": true,
+          "size": 90
+        }
+      },
+
+      "encoding": {
+
+        "x": {
+          "field": "Industry",
+          "type": "nominal"
+        },
+
+        "y": {
+          "field": "GrowthRate",
+          "type": "quantitative",
+
+          "title": "Quarter-on-Quarter Growth (%)",
+
+          "scale": {
+            "domain": [0, 5]
+          },
+
+          "axis": {
+            "orient": "right",
+            "labelColor": "#CBF7ED",
+            "titleColor": "#CBF7ED"
+          }
+        },
+
+        "color": {
+          "value": "#CBF7ED"
+        },
+
+        "tooltip": [
+          {
+            "field": "Industry",
+            "title": "Industry"
+          },
+          {
+            "field": "AdoptionRate",
+            "title": "Adoption Rate (%)"
+          },
+          {
+            "field": "GrowthRate",
+            "title": "QoQ Growth (%)"
+          }
+        ]
+      }
+    }
+  ],
+
+  "resolve": {
+    "scale": {
+      "y": "independent"
+    }
+  },
+
+  "config": {
+
+    "view": {
+      "stroke": null
+    },
+
+    "axis": {
+      "labelFont": "Inter, Arial, sans-serif",
+      "titleFont": "Inter, Arial, sans-serif",
+      "labelFontSize": 12,
+      "titleFontSize": 13
+    }
+  }
+}
