@@ -99,11 +99,17 @@
     </div>
     <section class="s2">
         <h1>Inside Australia</h1>
-        <div id="chart5"></div>  <!-- Australia map -->
+        <p>This is the content for Section 2.</p>
+
+        <div class="chart-container">
+            <h3>1</h3>
+            <p>1</p>
+            <div id="chart5"></div>  <!-- Australia map -->
+        </div>
         <div id="chart6"></div>  <!-- Annotated Line Chart -->
         <div id="chart7"></div>  <!-- Bar & Line Chart -->
         <div id="chart8"></div>  <!-- Waffle Chart -->
-        <p>This is the content for Section 2.</p>
+        
     </section>
 
     <!--SECTION 3: Diving Deeper into Australia's AI Landscape -->
@@ -177,6 +183,12 @@
             console.error('Vega embed error:', err);
         });
             
+    </script>
+
+    <script> 
+        vegaEmbed('#chart5', 'js/Australia_choropleth.json', {actions: false}).catch(function(err){
+            console.error('Vega embed error:', err);
+        });
     </script>
 </body>
 
