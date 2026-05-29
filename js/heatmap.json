@@ -1,0 +1,170 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "transparent",
+
+  "width": 1200,
+  "height": 360,
+
+  "data": {
+    "values": [
+
+      {"Sector":"Finance","Dimension":"Infrastructure","Score":70},
+      {"Sector":"Finance","Dimension":"Workforce Skills","Score":38},
+      {"Sector":"Finance","Dimension":"IT","Score":80},
+      {"Sector":"Finance","Dimension":"Governance","Score":60},
+      {"Sector":"Finance","Dimension":"R&D","Score":50},
+      {"Sector":"Finance","Dimension":"Marketing","Score":75},
+      {"Sector":"Finance","Dimension":"HR Management","Score":38},
+      {"Sector":"Finance","Dimension":"Client Experience","Score":70},
+
+      {"Sector":"Healthcare","Dimension":"Infrastructure","Score":50},
+      {"Sector":"Healthcare","Dimension":"Workforce Skills","Score":45},
+      {"Sector":"Healthcare","Dimension":"IT","Score":60},
+      {"Sector":"Healthcare","Dimension":"Governance","Score":40},
+      {"Sector":"Healthcare","Dimension":"R&D","Score":55},
+      {"Sector":"Healthcare","Dimension":"Marketing","Score":30},
+      {"Sector":"Healthcare","Dimension":"HR Management","Score":45},
+      {"Sector":"Healthcare","Dimension":"Client Experience","Score":50},
+
+      {"Sector":"Retail","Dimension":"Infrastructure","Score":30},
+      {"Sector":"Retail","Dimension":"Workforce Skills","Score":20},
+      {"Sector":"Retail","Dimension":"IT","Score":40},
+      {"Sector":"Retail","Dimension":"Governance","Score":30},
+      {"Sector":"Retail","Dimension":"R&D","Score":45},
+      {"Sector":"Retail","Dimension":"Marketing","Score":60},
+      {"Sector":"Retail","Dimension":"HR Management","Score":50},
+      {"Sector":"Retail","Dimension":"Client Experience","Score":70},
+
+      {"Sector":"Manufacturing","Dimension":"Infrastructure","Score":60},
+      {"Sector":"Manufacturing","Dimension":"Workforce Skills","Score":46},
+      {"Sector":"Manufacturing","Dimension":"IT","Score":50},
+      {"Sector":"Manufacturing","Dimension":"Governance","Score":45},
+      {"Sector":"Manufacturing","Dimension":"R&D","Score":50},
+      {"Sector":"Manufacturing","Dimension":"Marketing","Score":35},
+      {"Sector":"Manufacturing","Dimension":"HR Management","Score":40},
+      {"Sector":"Manufacturing","Dimension":"Client Experience","Score":55},
+
+      {"Sector":"Education","Dimension":"Infrastructure","Score":70},
+      {"Sector":"Education","Dimension":"Workforce Skills","Score":65},
+      {"Sector":"Education","Dimension":"IT","Score":80},
+      {"Sector":"Education","Dimension":"Governance","Score":60},
+      {"Sector":"Education","Dimension":"R&D","Score":80},
+      {"Sector":"Education","Dimension":"Marketing","Score":25},
+      {"Sector":"Education","Dimension":"HR Management","Score":60},
+      {"Sector":"Education","Dimension":"Client Experience","Score":70},
+
+      {"Sector":"Mining","Dimension":"Infrastructure","Score":85},
+      {"Sector":"Mining","Dimension":"Workforce Skills","Score":65},
+      {"Sector":"Mining","Dimension":"IT","Score":90},
+      {"Sector":"Mining","Dimension":"Governance","Score":55},
+      {"Sector":"Mining","Dimension":"R&D","Score":75},
+      {"Sector":"Mining","Dimension":"Marketing","Score":30},
+      {"Sector":"Mining","Dimension":"HR Management","Score":60},
+      {"Sector":"Mining","Dimension":"Client Experience","Score":60}
+
+    ]
+  },
+
+  "mark": {
+    "type": "rect",
+    "cornerRadius": 6,
+    "stroke": "#1D2747",
+    "strokeWidth": 2
+  },
+
+  "encoding": {
+
+    "x": {
+      "field": "Dimension",
+      "type": "nominal",
+
+      "sort": [
+        "Infrastructure",
+        "Workforce Skills",
+        "AI Adoption",
+        "Governance"
+      ],
+
+      "axis": {
+        "title": null,
+        "labelAngle": 0,
+        "labelColor": "white",
+        "labelFont": "Akt, sans-serif",
+        "labelFontSize": 16,
+        "domain": false,
+        "ticks": false
+      }
+    },
+
+    "y": {
+      "field": "Sector",
+      "type": "nominal",
+
+      "sort": [
+        "Finance ",
+        "Mining ",
+        "Healthcare ",
+        "Education ",
+        "Retail ",
+        "Manufacturing "
+      ],
+
+      "axis": {
+        "title": null,
+        "labelColor": "white",
+        "labelFont": "Akt, sans-serif",
+        "labelFontSize": 16,
+        "domain": false,
+        "ticks": false
+      }
+    },
+
+    "color": {
+      "field": "Score",
+      "type": "quantitative",
+
+      "scale": {
+        "domain": [0, 100],
+        "scheme": "oranges"
+      },
+
+      "legend": {
+        "title": "Readiness Score",
+        "orient": "bottom",
+        "direction": "horizontal",
+
+        "titleColor": "white",
+        "labelColor": "white",
+
+        "gradientLength": 240,
+        "gradientThickness": 14
+      }
+    },
+
+    "tooltip": [
+      {
+        "field": "Sector",
+        "title": "Sector"
+      },
+      {
+        "field": "Dimension",
+        "title": "Capability Dimension"
+      },
+      {
+        "field": "Score",
+        "title": "Readiness Score"
+      }
+    ]
+  },
+
+  "config": {
+
+    "view": {
+      "stroke": null
+    },
+
+    "axis": {
+      "grid": false
+    }
+  }
+}

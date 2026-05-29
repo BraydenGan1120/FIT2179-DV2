@@ -180,14 +180,17 @@
             </article>
         </div>
 
-        <article class="placeholder-card">
-            <div class="chart-header stacked">
-                <h3>Sector Readiness</h3>
-                <p>Reserved for a heatmap showing readiness across sectors and dimensions.</p>
-            </div>
-            <div id="chart11"></div>
-        </article>
-        
+        <div class="heatmap-chart">
+            <article class="placeholder-card">
+                <div class="chart-header stacked">
+                    <h3>Sector Readiness</h3>
+                    <p>Australia’s AI readiness is uneven across industries, with stronger performance in IT, infrastructure, and client-focused applications, 
+                        while workforce skills and marketing capabilities remain weaker in several sectors. Finance, Education and mining show the highest overall readiness, 
+                        whereas retail and manufacturing still face capability gaps that may slow large-scale AI adoption.</p>
+                </div>
+                <div id="chart11"></div>
+            </article>
+        </div>
     </section>
 
     <!--SECTION 4: AI Impact in Australia -->
@@ -315,6 +318,13 @@
                 controlsTarget.appendChild(generatedControls);
             }
         }).catch(function(err){
+            console.error('Vega embed error:', err);
+        });
+    </script>
+
+    <!-- Heatmap Chart -->
+    <script>
+        vegaEmbed('#chart11', 'js/heatmap.json', {actions: false}).catch(function(err){
             console.error('Vega embed error:', err);
         });
     </script>
