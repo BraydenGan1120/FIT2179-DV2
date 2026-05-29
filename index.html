@@ -1,15 +1,15 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>Australia in the AI Race</title>
 
     <!--Google Fonts-->
-    <link href="https://fonts.googleapis.com/css2?family=Akt:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+
     <!--VegaLite-->
     <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
@@ -21,19 +21,19 @@
 
 <body>
     <!--HEADER-->
-    <div class="header">
-        <p class="section-label">FIT2179 · Data Visualization II · BRAYDEN GAN  </p>
-        <h1> Australia in the AI Race</h1>
-        <p>Artificial intelligence is reshaping the global economy, driving countries to compete for innovation, talent, and technological leadership. With its growing tech sector and strong research capabilities, Australia has the opportunity to play an important role in the rapidly evolving AI race. </p>
+    <header class="header">
+        <p class="section-label">FIT2179 &middot; Data Visualization II &middot; Brayden Gan</p>
+        <h1><span>Australia in the</span> <strong>AI Race</strong></h1>
+        <p class="hero-copy">Artificial intelligence is reshaping the global economy, pushing countries to compete for innovation, talent, infrastructure, and technological leadership. This visual story explores where Australia stands globally and how AI adoption differs across states, territories, and industries.</p>
+
         <div class="stats-row">
-            <!--Stats Row-->
             <div class="stat">
                 <span class="stat-rank">#9</span>
                 <span class="stat-label">Global AI Readiness Rank</span>
             </div>
             <div class="stat">
-                <span class="stat-rank">37% - 42%</span>
-                <span class="stat-label">Of SME Adoption</span>
+                <span class="stat-rank">39%</span>
+                <span class="stat-label">Average SME Adoption</span>
             </div>
             <div class="stat">
                 <span class="stat-rank">#16</span>
@@ -41,106 +41,156 @@
             </div>
             <div class="stat">
                 <span class="stat-rank">14% - 37%</span>
-                <span class="stat-label">Compound Annual Growth Rate</span>
+                <span class="stat-label">Projected Annual Growth</span>
             </div>
-
         </div>
-    </div>
+    </header>
 
     <!--SECTION 1: Where Does Australia Stand? -->
     <div class="section">
-        <span class="section-num"> Section One</span>
+        <span class="section-num">Section One</span>
     </div>
-    <section class="s1">
-        
-        <h1>The Global Race: Where Does Australia Stand?</h1>
 
-        <p>AI is no longer a future technology, it is actively reshaping how governments deliver services, how businesses compete, 
-            and how workers do their jobs. The Oxford Insights Government AI Readiness Index ranks 195 nations on their capacity to deploy AI in public services.
-        </p>
-        
-        <p>Australia is doing quite well in the global AI race and is usually ranked among the top countries for AI readiness. 
-            Australia has strong universities, good digital infrastructure, and government support for AI development. 
-            However, it still falls behind countries like the United States and China because they invest much more money into AI technology. 
-        </p>
-
-        <div class="chartrow">
-            <div class="chart-container">
-                <h3>AI Readiness Index of the World</h3>
-                <p>Global overview of AI readiness across different countries</p>
-                <label for="yearSelect">Select a year:</label>
-                <select id="yearSelect" name="yearSelect">
-                    <option value="2025" selected>2025</option>
-                    <option value="2024">2024</option>
-                    <option value="2023">2023</option>
-                </select>
-                <div id="choropleth"></div>  <!-- World map -->
-                <p id="datasource">Data Sources: Links Placeholder</p>
-            </div>
-
-
-            <div class="chart-container2">
-                <h3>Growth in Global AI Readiness Rankings</h3>
-                <p>This slope graph compares the AI readiness scores of leading countries from 2023 to 2025, highlighting how nations are progressing in artificial intelligence capability and preparedness. 
-                    The United States consistently leads the rankings, while China and France show strong upward growth over time. </p>
-                <br>
-                <p>Australia remains competitive among advanced economies, improving in 2024 before experiencing a slight decline in 2025, reflecting the fast-moving and highly competitive global AI race.</p>
-                
-                <div id="chart2"></div>  <!-- Slope chart -->
-
-            </div>
+    <section class="story-section s1">
+        <div class="section-intro">
+            <h1>The Global Race: Where Does Australia Stand?</h1>
+            <p>AI is no longer a future technology. It is already changing how governments deliver services, how businesses compete, and how workers make decisions. The Government AI Readiness Index compares how prepared countries are to adopt and govern AI at scale.</p>
+            <p>Australia ranks strongly among advanced economies, supported by universities, digital infrastructure, and policy momentum. However, larger AI markets such as the United States and China continue to set the pace through deeper investment and larger technology ecosystems.</p>
         </div>
 
+        <div class="chartrow chartrow-global">
+            <article class="chart-container chart-container-large">
+                <div class="chart-header">
+                    <div>
+                        <h3>AI Readiness Index of the World</h3>
+                        <p>Compare national AI readiness scores and see how Australia's position changes by year.</p>
+                    </div>
+                    <div class="control-group">
+                        <label for="yearSelect">Year</label>
+                        <select id="yearSelect" name="yearSelect">
+                            <option value="2025" selected>2025</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="choropleth"></div>
+                <p id="datasource">Source: Oxford Insights Government AI Readiness Index.</p>
+            </article>
+
+            <article class="chart-container chart-container-side">
+                <div class="chart-header stacked">
+                    <h3>Movement in Global AI Readiness</h3>
+                    <p>The slope chart compares leading countries from 2023 to 2025, highlighting which nations are gaining ground and which are being overtaken in the AI readiness race.</p>
+                    <br>
+                    <p>The slope chart compares leading countries from 2023 to 2025, highlighting more more more more more more more more one line</p>
+                </div>
+                <div id="chart2"></div>
+            </article>
+        </div>
     </section>
 
     <!--SECTION 2: Inside Australia -->
     <div class="section">
-        <span class="section-num"> Section Two</span>
+        <span class="section-num">Section Two</span>
     </div>
-    <section class="s2">
-        <h1>Inside Australia</h1>
-        <p>This is the content for Section 2.</p>
 
-        <div class="chart-container">
-            <h3>1</h3>
-            <p>1</p>
-            <div id="chart5"></div>  <!-- Australia map -->
+    <section class="story-section s2">
+        <div class="section-intro">
+            <h1>Inside Australia</h1>
+            <p>Australia's AI story is not evenly distributed. Adoption varies across states and territories depending on industry mix, business size, digital capability, and local innovation ecosystems.</p>
         </div>
-        <div id="chart6"></div>  <!-- Annotated Line Chart -->
-        <div id="chart7"></div>  <!-- Bar & Line Chart -->
-        <div id="chart8"></div>  <!-- Waffle Chart -->
-        
+
+        <div class="chartrow chartrow-australia">
+            <article class="chart-container chart-container-large">
+                <div class="chart-header stacked">
+                    <h3>AI Adoption by State and Territory</h3>
+                    <p>State labels help locate regional differences. Higher values indicate stronger estimated AI adoption.</p>
+                </div>
+                <div id="chart5"></div>
+            </article>
+
+            <article class="chart-container chart-container-donut">
+                <div class="chart-header stacked">
+                    <h3>Adoption Status and Leading Industry</h3>
+                    <p>Select a state or territory to view the share that adopts AI, does not adopt AI, or is not yet aware of AI use cases.</p>
+                </div>
+                <div id="chart6"></div>
+                <div id="chart6-controls" class="chart-controls-below"></div>
+            </article>
+        </div>
+
+        <div class="placeholder-grid">
+            <article class="placeholder-card" id="chart7">
+                <h3>Business Adoption Trend</h3>
+                <p>Reserved for the bar and line chart showing how AI adoption changes over time.</p>
+            </article>
+            <article class="placeholder-card" id="chart8">
+                <h3>Adoption Composition</h3>
+                <p>Reserved for the waffle chart showing how adoption groups compare at a glance.</p>
+            </article>
+        </div>
     </section>
 
     <!--SECTION 3: Diving Deeper into Australia's AI Landscape -->
     <div class="section">
-        <span class="section-num"> Section Three</span>
+        <span class="section-num">Section Three</span>
     </div>
-    <section class="s3">
-        <h1>What's Holding Australia Back?</h1>
-        <div id="chart9"></div>  <!-- Diverging Bar Chart -->
-        <div id="chart10"></div>  <!-- Radar Chart -->
-        <div id="chart11"></div>  <!-- HeatMap -->
-        <p>This is the content for Section 3.</p>
+
+    <section class="story-section s3">
+        <div class="section-intro">
+            <h1>What's Holding Australia Back?</h1>
+            <p>Australia has the foundations to compete, but adoption depends on more than readiness. Skills shortages, investment gaps, governance uncertainty, and uneven industry capability can slow momentum.</p>
+        </div>
+
+        <div class="placeholder-grid three-col">
+            <article class="placeholder-card" id="chart9">
+                <h3>Barriers to Adoption</h3>
+                <p>Reserved for a diverging bar chart comparing drivers and barriers.</p>
+            </article>
+            <article class="placeholder-card" id="chart10">
+                <h3>Capability Profile</h3>
+                <p>Reserved for a radar chart comparing Australia's AI strengths and weaknesses.</p>
+            </article>
+            <article class="placeholder-card" id="chart11">
+                <h3>Sector Readiness</h3>
+                <p>Reserved for a heatmap showing readiness across sectors and dimensions.</p>
+            </article>
+        </div>
     </section>
 
     <!--SECTION 4: AI Impact in Australia -->
     <div class="section">
-        <span class="section-num"> Section Four</span>
+        <span class="section-num">Section Four</span>
     </div>
-    <section class="s4">
-        <h1>AI Impact in Australia</h1>
-        <div id="chart12"></div>  <!-- Stacked Area Chart -->
-        <div id="chart13"></div>  <!-- Dot Strip Plot (may change) -->
-        <div id="chart14"></div>  <!-- Lollipop Chart -->
-        <p>This is the content for Section 4.</p>
+
+    <section class="story-section s4">
+        <div class="section-intro">
+            <h1>AI Impact in Australia</h1>
+            <p>As adoption grows, the impact of AI will be felt across productivity, jobs, service delivery, and regional competitiveness. The final section connects adoption patterns with their broader economic effects.</p>
+        </div>
+
+        <div class="placeholder-grid three-col">
+            <article class="placeholder-card" id="chart12">
+                <h3>Economic Impact</h3>
+                <p>Reserved for a stacked area chart tracking AI-related change over time.</p>
+            </article>
+            <article class="placeholder-card" id="chart13">
+                <h3>Workforce Exposure</h3>
+                <p>Reserved for a dot strip plot comparing exposure across job groups.</p>
+            </article>
+            <article class="placeholder-card" id="chart14">
+                <h3>Industry Gains</h3>
+                <p>Reserved for a lollipop chart ranking industries by AI impact.</p>
+            </article>
+        </div>
     </section>
 
     <!-- FOOTER -->
-    <div class="footer">
-        <p>Data Sources: Links Placeholder</p>
-        <p class="author">Created by Brayden Gan · 35684534 · FIT2179 Data Visualization II · 29 May 2026 ·  <a href="https://github.com/braydengan1120">GitHub</a></p>
-    </div>
+    <footer class="footer">
+        <p>Data sources: Oxford Insights Government AI Readiness Index; supplementary adoption figures to be finalised.</p>
+        <p class="author">Created by Brayden Gan &middot; 35684534 &middot; FIT2179 Data Visualization II &middot; 29 May 2026 &middot; <a href="https://github.com/braydengan1120">GitHub</a></p>
+    </footer>
 
     <!-- ACTIONS -->
     <!-- Choropleth Map -->
@@ -179,17 +229,35 @@
 
     <!-- Slope Chart -->
     <script>
-        vegaEmbed('#chart2', 'js/Slope.json', {actions: false}).catch(function(err){
+        vegaEmbed('#chart2', 'js/Slope.json', {actions: false, renderer: 'svg'}).catch(function(err){
             console.error('Vega embed error:', err);
         });
-            
     </script>
 
-    <script> 
+    <!-- Australia Choropleth -->
+    <script>
         vegaEmbed('#chart5', 'js/Australia_choropleth.json', {actions: false}).catch(function(err){
+            console.error('Vega embed error:', err);
+        });
+    </script>
+
+    <!-- State Adoption Donut Chart -->
+    <script>
+        vegaEmbed('#chart6', 'js/State_adoption_donut.json', {actions: false, bind: '#chart6-controls'}).then(function(){
+            const generatedControls = document.querySelector('#chart6 .vega-bindings');
+            const controlsTarget = document.getElementById('chart6-controls');
+            if (generatedControls && controlsTarget && !controlsTarget.contains(generatedControls)) {
+                controlsTarget.appendChild(generatedControls);
+            }
+        }).catch(function(err){
             console.error('Vega embed error:', err);
         });
     </script>
 </body>
 
 </html>
+
+
+
+
+

@@ -1,0 +1,153 @@
+﻿{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "transparent",
+  "padding": {"top": 12, "right": 10, "bottom": 8, "left": 10},
+  "params": [
+    {
+      "name": "selectedState",
+      "value": "Victoria",
+      "bind": {
+        "input": "select",
+        "name": "State: ",
+        "options": [
+          "New South Wales",
+          "Victoria",
+          "Queensland",
+          "Western Australia",
+          "South Australia",
+          "Tasmania",
+          "Northern Territory",
+          "Australian Capital Territory"
+        ]
+      }
+    }
+  ],
+  "data": {
+    "values": [
+      {"State": "New South Wales", "Status": "Adopt", "Percentage": 40.1, "Industry": "Services", "IndustryPercent": 33.8},
+      {"State": "New South Wales", "Status": "Not adopt", "Percentage": 34.6, "Industry": "Services", "IndustryPercent": 33.8},
+      {"State": "New South Wales", "Status": "Not aware", "Percentage": 25.3, "Industry": "Services", "IndustryPercent": 33.8},
+      {"State": "Victoria", "Status": "Adopt", "Percentage": 37.6, "Industry": "Mining", "IndustryPercent": 83.3},
+      {"State": "Victoria", "Status": "Not adopt", "Percentage": 36, "Industry": "Mining", "IndustryPercent": 83.3},
+      {"State": "Victoria", "Status": "Not aware", "Percentage": 26.3, "Industry": "Mining", "IndustryPercent": 83.3},
+      {"State": "Queensland", "Status": "Adopt", "Percentage": 39.4, "Industry": "Health and Education", "IndustryPercent": 33.6},
+      {"State": "Queensland", "Status": "Not adopt", "Percentage": 36.1, "Industry": "Health and Education", "IndustryPercent": 33.6},
+      {"State": "Queensland", "Status": "Not aware", "Percentage": 24.5, "Industry": "Health and Education", "IndustryPercent": 33.6},
+      {"State": "Western Australia", "Status": "Adopt", "Percentage": 32.7, "Industry": "Manufacturing", "IndustryPercent": 30.2},
+      {"State": "Western Australia", "Status": "Not adopt", "Percentage": 36.7, "Industry": "Manufacturing", "IndustryPercent": 30.2},
+      {"State": "Western Australia", "Status": "Not aware", "Percentage": 30.6, "Industry": "Manufacturing", "IndustryPercent": 30.2},
+      {"State": "South Australia", "Status": "Adopt", "Percentage": 33.7, "Industry": "Mining", "IndustryPercent": 87.5},
+      {"State": "South Australia", "Status": "Not adopt", "Percentage": 45.4, "Industry": "Mining", "IndustryPercent": 87.5},
+      {"State": "South Australia", "Status": "Not aware", "Percentage": 20.9, "Industry": "Mining", "IndustryPercent": 87.5},
+      {"State": "Tasmania", "Status": "Adopt", "Percentage": 16.8, "Industry": "Services", "IndustryPercent": 35.6},
+      {"State": "Tasmania", "Status": "Not adopt", "Percentage": 48.5, "Industry": "Services", "IndustryPercent": 35.6},
+      {"State": "Tasmania", "Status": "Not aware", "Percentage": 34.6, "Industry": "Services", "IndustryPercent": 35.6},
+      {"State": "Northern Territory", "Status": "Adopt", "Percentage": 56, "Industry": "Hospitality", "IndustryPercent": 81.8},
+      {"State": "Northern Territory", "Status": "Not adopt", "Percentage": 22.3, "Industry": "Hospitality", "IndustryPercent": 81.8},
+      {"State": "Northern Territory", "Status": "Not aware", "Percentage": 21.7, "Industry": "Hospitality", "IndustryPercent": 81.8},
+      {"State": "Australian Capital Territory", "Status": "Adopt", "Percentage": 55.4, "Industry": "Health and Education", "IndustryPercent": 46.2},
+      {"State": "Australian Capital Territory", "Status": "Not adopt", "Percentage": 25.3, "Industry": "Health and Education", "IndustryPercent": 46.2},
+      {"State": "Australian Capital Territory", "Status": "Not aware", "Percentage": 19.3, "Industry": "Health and Education", "IndustryPercent": 46.2}
+    ]
+  },
+  "transform": [
+    {"filter": "datum.State === selectedState"}
+  ],
+  "vconcat": [
+    {
+      "width": 360,
+      "height": 260,
+      "layer": [
+        {
+          "mark": {
+            "type": "arc",
+            "innerRadius": 62,
+            "outerRadius": 108,
+            "stroke": "#23395B",
+            "strokeWidth": 3
+          },
+          "encoding": {
+            "theta": {"field": "Percentage", "type": "quantitative", "stack": true},
+            "color": {
+              "field": "Status",
+              "type": "nominal",
+              "scale": {
+                "domain": ["Adopt", "Not adopt", "Not aware"],
+                "range": ["#009E73", "#D55E00", "#56B4E9"]
+              },
+              "legend": {
+                "title": null,
+                "orient": "bottom",
+                "labelColor": "#ffffff",
+                "labelFont": "Akt, Arial, sans-serif"
+              }
+            },
+            "order": {
+              "field": "Status",
+              "sort": "ascending"
+            },
+            "tooltip": [
+              {"field": "State", "type": "nominal", "title": "State"},
+              {"field": "Status", "type": "nominal", "title": "Status"},
+              {"field": "Percentage", "type": "quantitative", "title": "Ratio", "format": ".1f"}
+            ]
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "radius": 126,
+            "font": "Akt, Arial, sans-serif",
+            "fontSize": 11,
+            "fontWeight": 700,
+            "color": "#ffffff"
+          },
+          "encoding": {
+            "theta": {"field": "Percentage", "type": "quantitative", "stack": true},
+            "text": {"field": "Percentage", "type": "quantitative", "format": ".1f"},
+            "detail": {"field": "Status"},
+            "order": {"field": "Status", "sort": "ascending"}
+          }
+        }
+      ]
+    },
+    {
+      "width": 360,
+      "height": 52,
+      "transform": [
+        {"filter": "datum.Status === 'Adopt'"},
+        {"calculate": "datum.Industry + ' leads AI adoption: ' + format(datum.IndustryPercent, '.1f') + '%'", "as": "IndustryLabel"}
+      ],
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "font": "Akt, Arial, sans-serif",
+        "fontSize": 14,
+        "fontWeight": 800,
+        "color": "#CBF7ED"
+      },
+      "encoding": {
+        "x": {"value": 180},
+        "y": {"value": 20},
+        "text": {"field": "IndustryLabel"}
+      }
+    }
+  ],
+  "config": {
+    "view": {"stroke": null},
+    "axis": {
+      "labelColor": "#ffffff",
+      "titleColor": "#CBF7ED",
+      "gridColor": "rgba(255,255,255,0.12)",
+      "domainColor": "rgba(255,255,255,0.35)",
+      "tickColor": "rgba(255,255,255,0.35)"
+    }
+  }
+}
+
+
+
+
+
+

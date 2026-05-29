@@ -1,9 +1,9 @@
-{
+﻿{
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 800,
     "height": 500,
     "projection": {"type": "equalEarth", "scale": 180}, 
-    "background": "#23395B",
+    "background": "transparent",
 
     "config": {
         "view": {
@@ -36,7 +36,7 @@
             "field": "Total Score",
             "type": "quantitative",
             "scale": {"scheme": "oranges", "domain": [0, 100]},
-            "legend": {"title": "AI Readiness Score", "orient": "bottom", "direction": "horizontal", "titleColor":"white", "labelColor":"white"}
+            "legend": {"title": "AI Readiness %", "orient": "bottom", "direction": "horizontal", "titleColor":"white", "labelColor":"white"}
             
         },
             "tooltip": [
@@ -46,5 +46,7 @@
         ]
     }
 }
+
+
 
 

@@ -1,0 +1,85 @@
+﻿{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 700,
+  "height": 500,
+  "background": "transparent",
+  "projection": {"type": "mercator"},
+  "layer": [
+    {
+      "data": {
+        "url": "maps/states.geojson",
+        "format": {"type": "json", "property": "features"}
+      },
+      "transform": [
+        {
+          "lookup": "properties.STATE_NAME",
+          "from": {
+            "data": {
+              "values": [
+                {"State": "New South Wales", "AdoptionRate": 40.1},
+                {"State": "Victoria", "AdoptionRate": 37.6},
+                {"State": "Queensland", "AdoptionRate": 39.4},
+                {"State": "Western Australia", "AdoptionRate": 32.7},
+                {"State": "South Australia", "AdoptionRate": 33.7},
+                {"State": "Tasmania", "AdoptionRate": 16.8},
+                {"State": "Northern Territory", "AdoptionRate": 56},
+                {"State": "Australian Capital Territory", "AdoptionRate": 55.4}
+              ]
+            },
+            "key": "State",
+            "fields": ["AdoptionRate"]
+          }
+        }
+      ],
+      "mark": {"type": "geoshape", "stroke": "#ffffff", "strokeWidth": 1.1, "cursor": "pointer"},
+      "encoding": {
+        "color": {
+          "field": "AdoptionRate",
+          "type": "quantitative",
+          "scale": {"scheme": "oranges", "domain": [0, 100]},
+          "legend": {
+            "title": "AI Adoption %",
+            "orient": "bottom",
+            "direction": "horizontal",
+            "gradientLength": 300,
+            "titleColor": "#ffffff",
+            "labelColor": "#ffffff"
+          }
+        },
+        "tooltip": [
+          {"field": "properties.STATE_NAME", "type": "nominal", "title": "State"},
+          {"field": "AdoptionRate", "type": "quantitative", "title": "AI Adoption %", "format": ".1f"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"State": "WA", "longitude": 122.2, "latitude": -25.3},
+          {"State": "NT", "longitude": 133.4, "latitude": -19.2},
+          {"State": "SA", "longitude": 135.6, "latitude": -30.0},
+          {"State": "QLD", "longitude": 145.0, "latitude": -22.5},
+          {"State": "NSW", "longitude": 147.0, "latitude": -32.8},
+          {"State": "VIC", "longitude": 144.5, "latitude": -37.2},
+          {"State": "TAS", "longitude": 146.7, "latitude": -42.1},
+          {"State": "ACT", "longitude": 149.1, "latitude": -35.3}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "font": "Akt, Arial, sans-serif",
+        "fontSize": 12,
+        "fontWeight": 800,
+        "color": "#172033"
+      },
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "text": {"field": "State"}
+      }
+    }
+  ],
+  "config": {"view": {"stroke": null}}
+}
+
+
