@@ -1,0 +1,203 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "transparent",
+  "width": 340,
+  "height": 340,
+  "data": {
+    "values": [
+      {"x":0,"y":9,"i":0,"status":"Using AI"},
+      {"x":1,"y":9,"i":1,"status":"Using AI"},
+      {"x":2,"y":9,"i":2,"status":"Using AI"},
+      {"x":3,"y":9,"i":3,"status":"Using AI"},
+      {"x":4,"y":9,"i":4,"status":"Using AI"},
+      {"x":5,"y":9,"i":5,"status":"Using AI"},
+      {"x":6,"y":9,"i":6,"status":"Using AI"},
+      {"x":7,"y":9,"i":7,"status":"Using AI"},
+      {"x":8,"y":9,"i":8,"status":"Using AI"},
+      {"x":9,"y":9,"i":9,"status":"Using AI"},
+      {"x":0,"y":8,"i":10,"status":"Using AI"},
+      {"x":1,"y":8,"i":11,"status":"Using AI"},
+      {"x":2,"y":8,"i":12,"status":"Using AI"},
+      {"x":3,"y":8,"i":13,"status":"Using AI"},
+      {"x":4,"y":8,"i":14,"status":"Using AI"},
+      {"x":5,"y":8,"i":15,"status":"Using AI"},
+      {"x":6,"y":8,"i":16,"status":"Using AI"},
+      {"x":7,"y":8,"i":17,"status":"Using AI"},
+      {"x":8,"y":8,"i":18,"status":"Using AI"},
+      {"x":9,"y":8,"i":19,"status":"Using AI"},
+      {"x":0,"y":7,"i":20,"status":"Using AI"},
+      {"x":1,"y":7,"i":21,"status":"Using AI"},
+      {"x":2,"y":7,"i":22,"status":"Using AI"},
+      {"x":3,"y":7,"i":23,"status":"Using AI"},
+      {"x":4,"y":7,"i":24,"status":"Using AI"},
+      {"x":5,"y":7,"i":25,"status":"Using AI"},
+      {"x":6,"y":7,"i":26,"status":"Using AI"},
+      {"x":7,"y":7,"i":27,"status":"Using AI"},
+      {"x":8,"y":7,"i":28,"status":"Using AI"},
+      {"x":9,"y":7,"i":29,"status":"Using AI"},
+      {"x":0,"y":6,"i":30,"status":"Using AI"},
+      {"x":1,"y":6,"i":31,"status":"Using AI"},
+      {"x":2,"y":6,"i":32,"status":"Using AI"},
+      {"x":3,"y":6,"i":33,"status":"Using AI"},
+      {"x":4,"y":6,"i":34,"status":"Using AI"},
+      {"x":5,"y":6,"i":35,"status":"Using AI"},
+      {"x":6,"y":6,"i":36,"status":"Using AI"},
+      {"x":7,"y":6,"i":37,"status":"Using AI"},
+      {"x":8,"y":6,"i":38,"status":"Using AI"},
+      {"x":9,"y":6,"i":39,"status":"Not using AI"},
+      {"x":0,"y":5,"i":40,"status":"Not using AI"},
+      {"x":1,"y":5,"i":41,"status":"Not using AI"},
+      {"x":2,"y":5,"i":42,"status":"Not using AI"},
+      {"x":3,"y":5,"i":43,"status":"Not using AI"},
+      {"x":4,"y":5,"i":44,"status":"Not using AI"},
+      {"x":5,"y":5,"i":45,"status":"Not using AI"},
+      {"x":6,"y":5,"i":46,"status":"Not using AI"},
+      {"x":7,"y":5,"i":47,"status":"Not using AI"},
+      {"x":8,"y":5,"i":48,"status":"Not using AI"},
+      {"x":9,"y":5,"i":49,"status":"Not using AI"},
+      {"x":0,"y":4,"i":50,"status":"Not using AI"},
+      {"x":1,"y":4,"i":51,"status":"Not using AI"},
+      {"x":2,"y":4,"i":52,"status":"Not using AI"},
+      {"x":3,"y":4,"i":53,"status":"Not using AI"},
+      {"x":4,"y":4,"i":54,"status":"Not using AI"},
+      {"x":5,"y":4,"i":55,"status":"Not using AI"},
+      {"x":6,"y":4,"i":56,"status":"Not using AI"},
+      {"x":7,"y":4,"i":57,"status":"Not using AI"},
+      {"x":8,"y":4,"i":58,"status":"Not using AI"},
+      {"x":9,"y":4,"i":59,"status":"Not using AI"},
+      {"x":0,"y":3,"i":60,"status":"Not using AI"},
+      {"x":1,"y":3,"i":61,"status":"Not using AI"},
+      {"x":2,"y":3,"i":62,"status":"Not using AI"},
+      {"x":3,"y":3,"i":63,"status":"Not using AI"},
+      {"x":4,"y":3,"i":64,"status":"Not using AI"},
+      {"x":5,"y":3,"i":65,"status":"Not using AI"},
+      {"x":6,"y":3,"i":66,"status":"Not using AI"},
+      {"x":7,"y":3,"i":67,"status":"Not using AI"},
+      {"x":8,"y":3,"i":68,"status":"Not using AI"},
+      {"x":9,"y":3,"i":69,"status":"Not using AI"},
+      {"x":0,"y":2,"i":70,"status":"Not using AI"},
+      {"x":1,"y":2,"i":71,"status":"Not using AI"},
+      {"x":2,"y":2,"i":72,"status":"Not using AI"},
+      {"x":3,"y":2,"i":73,"status":"Not using AI"},
+      {"x":4,"y":2,"i":74,"status":"Not using AI"},
+      {"x":5,"y":2,"i":75,"status":"Not using AI"},
+      {"x":6,"y":2,"i":76,"status":"Not using AI"},
+      {"x":7,"y":2,"i":77,"status":"Not using AI"},
+      {"x":8,"y":2,"i":78,"status":"Not using AI"},
+      {"x":9,"y":2,"i":79,"status":"Not using AI"},
+      {"x":0,"y":1,"i":80,"status":"Not using AI"},
+      {"x":1,"y":1,"i":81,"status":"Not using AI"},
+      {"x":2,"y":1,"i":82,"status":"Not using AI"},
+      {"x":3,"y":1,"i":83,"status":"Not using AI"},
+      {"x":4,"y":1,"i":84,"status":"Not using AI"},
+      {"x":5,"y":1,"i":85,"status":"Not using AI"},
+      {"x":6,"y":1,"i":86,"status":"Not using AI"},
+      {"x":7,"y":1,"i":87,"status":"Not using AI"},
+      {"x":8,"y":1,"i":88,"status":"Not using AI"},
+      {"x":9,"y":1,"i":89,"status":"Not using AI"},
+      {"x":0,"y":0,"i":90,"status":"Not using AI"},
+      {"x":1,"y":0,"i":91,"status":"Not using AI"},
+      {"x":2,"y":0,"i":92,"status":"Not using AI"},
+      {"x":3,"y":0,"i":93,"status":"Not using AI"},
+      {"x":4,"y":0,"i":94,"status":"Not using AI"},
+      {"x":5,"y":0,"i":95,"status":"Not using AI"},
+      {"x":6,"y":0,"i":96,"status":"Not using AI"},
+      {"x":7,"y":0,"i":97,"status":"Not using AI"},
+      {"x":8,"y":0,"i":98,"status":"Not using AI"},
+      {"x":9,"y":0,"i":99,"status":"Not using AI"}
+    ]
+  },
+
+  "layer": [
+    {
+      "mark": {
+        "type": "rect",
+        "cursor": "pointer",
+        "cornerRadius": 3
+      },
+
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "ordinal",
+          "axis": null,
+          "scale": {"paddingInner": 0.18, "paddingOuter": 0.08}
+        },
+        "y": {
+          "field": "y",
+          "type": "ordinal",
+          "axis": null,
+          "sort": "descending",
+          "scale": {"paddingInner": 0.18, "paddingOuter": 0.08}
+        },
+        "color": {
+          "field": "status",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Using AI", "Not using AI"],
+            "range": ["#E77D22", "#FAB972"]
+          },
+          "legend": {
+            "title": null,
+            "orient": "bottom",
+            "direction": "horizontal",
+            "labelColor": "#ffffff",
+            "labelFont": "Akt, sans-serif",
+            "labelFontSize": 12,
+            "symbolType": "square",
+            "symbolSize": 120,
+            "padding": 12
+          }
+        },
+
+        "opacity": {
+          "condition": {
+            "param": "hoverStatus",
+            "empty": true,
+            "value": 1
+          },
+          "value": 0.35
+        },
+        "tooltip": [
+          {"field": "status", "type": "nominal", "title": "Status"}
+        ]
+      },
+
+      "params": [
+        {
+          "name": "hoverStatus",
+          "select": {
+            "type": "point",
+            "fields": ["status"],
+            "on": "pointerover",
+            "clear": "pointerout"
+          }
+        }
+      ]
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "font": "Akt, sans-serif",
+        "fontSize": 22,
+        "fontWeight": 700
+      },
+      "transform": [
+        {"filter": "datum.i === 19"}
+      ],
+      "encoding": {
+        "x": {"value": 170},
+        "y": {"value": 168},
+        "text": {"value": "39 in 100 uses AI "},
+        "color": {"value": "#CBF7ED"},
+        "stroke":{"value":"black"}
+      }
+    }
+  ],
+  "config": {
+    "view": {"stroke": null},
+    "axis": {"grid": false}
+  }
+}

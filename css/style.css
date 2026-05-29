@@ -356,6 +356,12 @@ select {
     overflow: hidden;
 }
 
+#chart7, 
+#chart8 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 #chart6 .vega-embed {
     display: flex;

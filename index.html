@@ -123,13 +123,19 @@
         </div>
 
         <div class="placeholder-grid">
-            <article class="placeholder-card" id="chart7">
-                <h3>Business Adoption Trend</h3>
-                <p>Reserved for the bar and line chart showing how AI adoption changes over time.</p>
+            <article class="chart-container">
+                <div class="chart-header stacked">
+                    <h3>Business Adoption Trend</h3>
+                    <p>Reserved for the bar and line chart showing how AI adoption changes over time.</p>
+                </div>
+                <div id="chart7"></div>
             </article>
-            <article class="placeholder-card" id="chart8">
-                <h3>Adoption Composition</h3>
-                <p>Reserved for the waffle chart showing how adoption groups compare at a glance.</p>
+            <article class="placeholder-card">
+                <div class="chart-header stacked">
+                    <h3>AI Adoption Among Australian Businesses</h3>
+                    <p>Each square represents 1% of Australian businesses and whether they are adopting the use of AI technologies.</p>
+                </div>
+                <div id="chart8"></div>
             </article>
         </div>
     </section>
@@ -256,6 +262,12 @@
         });
     </script>
 
+    <!-- Slope Chart -->
+    <script>
+        vegaEmbed('#chart8', 'js/waffle.json', {actions: false}).catch(function(err){
+            console.error('Vega embed error:', err);
+        });
+    </script>
 
 </body>
 
