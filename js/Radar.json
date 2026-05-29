@@ -1,0 +1,472 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v6.json",
+  "background": "transparent",
+  "width": 500,
+  "height": 500,
+  "padding": 40,
+
+  "autosize": {
+    "type": "none",
+    "contains": "padding"
+  },
+
+  "signals": [
+    {
+      "name": "radius",
+      "update": "width / 2.7"
+    },
+
+    {
+      "name": "YearSelect",
+      "value": "Both",
+      "bind": {
+        "input": "select",
+        "options": ["Both", "2022", "2024"],
+        "labels": ["Both Years", "2022 Only", "2024 Only"],
+        "name": "Display: "
+      }
+    }
+  ],
+
+  "data": [
+
+    {
+      "name": "table",
+
+      "values": [
+
+        {
+          "key": "Organizational Adoption",
+          "value": 23,
+          "category": "2022"
+        },
+        {
+          "key": "Employee Use of AI",
+          "value": 36,
+          "category": "2022"
+        },
+        {
+          "key": "Trust in AI at Work",
+          "value": 41,
+          "category": "2022"
+        },
+        {
+          "key": "Perceived Org. Support",
+          "value": 43,
+          "category": "2022"
+        },
+        {
+          "key": "AI Knowledge",
+          "value": 24,
+          "category": "2022"
+        },
+        {
+          "key": "Awareness of AI Use",
+          "value": 34,
+          "category": "2022"
+        },
+
+        {
+          "key": "Organizational Adoption",
+          "value": 65,
+          "category": "2024"
+        },
+        {
+          "key": "Employee Use of AI",
+          "value": 59,
+          "category": "2024"
+        },
+        {
+          "key": "Trust in AI at Work",
+          "value": 40,
+          "category": "2024"
+        },
+        {
+          "key": "Perceived Org. Support",
+          "value": 40,
+          "category": "2024"
+        },
+        {
+          "key": "AI Knowledge",
+          "value": 23,
+          "category": "2024"
+        },
+        {
+          "key": "Awareness of AI Use",
+          "value": 33,
+          "category": "2024"
+        }
+      ],
+
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "YearSelect === 'Both' || datum.category === YearSelect"
+        }
+      ]
+    },
+
+    {
+      "name": "keys",
+
+      "source": "table",
+
+      "transform": [
+        {
+          "type": "aggregate",
+          "groupby": ["key"]
+        }
+      ]
+    }
+  ],
+
+  "scales": [
+
+    {
+      "name": "angular",
+
+      "type": "point",
+
+      "range": {
+        "signal": "[-PI, PI]"
+      },
+
+      "padding": 0.5,
+
+      "domain": {
+        "data": "table",
+        "field": "key"
+      }
+    },
+
+    {
+      "name": "radial",
+
+      "type": "linear",
+
+      "range": {
+        "signal": "[0, radius]"
+      },
+
+      "domain": [0, 70],
+
+      "zero": true,
+      "nice": false
+    },
+
+    {
+      "name": "color",
+
+      "type": "ordinal",
+
+      "domain": ["2022", "2024"],
+
+      "range": ["#CBF7ED", "#E67E22"]
+    }
+  ],
+
+  "encode": {
+    "enter": {
+      "x": {
+        "signal": "width / 2"
+      },
+
+      "y": {
+        "signal": "height / 2"
+      }
+    }
+  },
+
+  "marks": [
+
+    {
+      "type": "group",
+
+      "name": "categories",
+
+      "zindex": 2,
+
+      "from": {
+        "facet": {
+          "data": "table",
+          "name": "facet",
+          "groupby": ["category"]
+        }
+      },
+
+      "marks": [
+
+        {
+          "type": "line",
+
+          "from": {
+            "data": "facet"
+          },
+
+          "encode": {
+
+            "enter": {
+
+              "interpolate": {
+                "value": "linear-closed"
+              },
+
+              "x": {
+                "signal": "scale('radial', datum.value) * cos(scale('angular', datum.key))"
+              },
+
+              "y": {
+                "signal": "scale('radial', datum.value) * sin(scale('angular', datum.key))"
+              },
+
+              "stroke": {
+                "scale": "color",
+                "field": "category"
+              },
+
+              "strokeWidth": {
+                "value": 2.5
+              },
+
+              "fill": {
+                "scale": "color",
+                "field": "category"
+              },
+
+              "fillOpacity": {
+                "value": 0.12
+              }
+            }
+          }
+        },
+
+        {
+          "type": "symbol",
+
+          "from": {
+            "data": "facet"
+          },
+
+          "encode": {
+
+            "enter": {
+
+              "x": {
+                "signal": "scale('radial', datum.value) * cos(scale('angular', datum.key))"
+              },
+
+              "y": {
+                "signal": "scale('radial', datum.value) * sin(scale('angular', datum.key))"
+              },
+
+              "size": {
+                "value": 70
+              },
+
+              "fill": {
+                "scale": "color",
+                "field": "category"
+              },
+
+              "stroke": {
+                "value": "white"
+              },
+
+              "strokeWidth": {
+                "value": 1
+              }
+            },
+
+            "hover": {
+              "size": {
+                "value": 120
+              }
+            },
+
+            "update": {
+
+              "tooltip": {
+                "signal": "{'Indicator': datum.key, 'Year': datum.category, 'Score': datum.value}"
+              }
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "rule",
+
+      "name": "radial-grid",
+
+      "from": {
+        "data": "keys"
+      },
+
+      "zindex": 0,
+
+      "encode": {
+
+        "enter": {
+
+          "x": {
+            "value": 0
+          },
+
+          "y": {
+            "value": 0
+          },
+
+          "x2": {
+            "signal": "radius * cos(scale('angular', datum.key))"
+          },
+
+          "y2": {
+            "signal": "radius * sin(scale('angular', datum.key))"
+          },
+
+          "stroke": {
+            "value": "#42557B"
+          },
+
+          "strokeWidth": {
+            "value": 1
+          }
+        }
+      }
+    },
+
+    {
+      "type": "text",
+
+      "name": "key-label",
+
+      "from": {
+        "data": "keys"
+      },
+
+      "zindex": 3,
+
+      "encode": {
+
+        "enter": {
+
+          "x": {
+            "signal": "(radius + 10) * cos(scale('angular', datum.key))"
+          },
+
+          "y": {
+            "signal": "(radius + 10) * sin(scale('angular', datum.key))"
+          },
+
+          "text": {
+            "field": "key"
+          },
+
+          "align": [
+            {
+              "test": "abs(scale('angular', datum.key)) > PI / 2",
+              "value": "right"
+            },
+            {
+              "value": "left"
+            }
+          ],
+
+          "baseline": [
+            {
+              "test": "scale('angular', datum.key) > 0",
+              "value": "top"
+            },
+            {
+              "test": "scale('angular', datum.key) == 0",
+              "value": "middle"
+            },
+            {
+              "value": "bottom"
+            }
+          ],
+
+          "fill": {
+            "value": "white"
+          },
+
+          "fontSize": {
+            "value": 9
+          },
+
+          "fontWeight": {
+            "value": "bold"
+          }
+        }
+      }
+    },
+
+    {
+      "type": "line",
+
+      "name": "outer-line",
+
+      "from": {
+        "data": "radial-grid"
+      },
+
+      "encode": {
+
+        "enter": {
+
+          "interpolate": {
+            "value": "linear-closed"
+          },
+
+          "x": {
+            "field": "x2"
+          },
+
+          "y": {
+            "field": "y2"
+          },
+
+          "stroke": {
+            "value": "#42557B"
+          },
+
+          "strokeWidth": {
+            "value": 1.2
+          }
+        }
+      }
+    }
+  ],
+
+  "legends": [
+
+    {
+      "fill": "color",
+
+      "orient": "bottom",
+
+      "direction": "horizontal",
+
+      "title": null,
+
+      "symbolType": "circle",
+
+      "encode": {
+
+        "labels": {
+          "update": {
+
+            "fill": {
+              "value": "white"
+            },
+
+            "fontSize": {
+              "value": 11
+            }
+          }
+        }
+      }
+    }
+  ]
+}

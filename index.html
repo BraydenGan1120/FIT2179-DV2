@@ -110,6 +110,7 @@
                     <p>AI adoption levels vary across Australian states and territories, reflecting differences in digital infrastructure, industry presence, and technology investment.</p>
                 </div>
                 <div id="chart5"></div>
+                <p id="datasource">Source: National AI Centre Adoption Tracker.</p>
             </article>
 
             <article class="chart-container chart-container-donut">
@@ -126,7 +127,7 @@
             <article class="chart-container chart-container-large">
                 <div class="chart-header stacked">
                     <h3>Business Adoption Trend</h3>
-                    <p>Reserved for the bar and line chart showing how AI adoption changes over time.</p>
+                    <p>This chart highlights how AI adoption and growth rates vary across different sectors of the Australian economy. Industries with higher AI adoption continue to show stronger growth.</p>
                 </div>
                 <div id="chart7"></div>
             </article>
@@ -149,23 +150,44 @@
     <section class="story-section s3">
         <div class="section-intro">
             <h1>What's Holding Australia Back?</h1>
-            <p>Australia has the foundations to compete, but adoption depends on more than readiness. Skills shortages, investment gaps, governance uncertainty, and uneven industry capability can slow momentum.</p>
+            <p>Despite its stable global ranking, Australia's actual AI adoption rate lags well behind its readiness score. Businesses cite cost, skills shortages, and distrust as key blockers. And when it comes to public confidence in AI, Australians are among the most sceptical in the developed world.</p>
+            
+            <p>This section explores more about why.</p>
         </div>
 
-        <div class="placeholder-grid three-col">
-            <article class="placeholder-card" id="chart9">
-                <h3>Barriers to Adoption</h3>
-                <p>Reserved for a diverging bar chart comparing drivers and barriers.</p>
+        <div class="chartrow chartrow-bar">
+            <article class="chart-container chart-container-large">
+                <div class="chart-header stacked">
+                    <h3>Barriers to Adoption</h3>
+                    <p>Australia's AI readiness ranking suggests strong digital capability and infrastructure, yet public trust in AI remains far more cautious. While businesses and governments continue investing in AI technologies, many Australians remain concerned about reliability, safeguards, and the risks associated with rapid AI adoption. </p>
+                    <br>
+                    <p>This chart highlights how trust-related concerns consistently score higher than optimism indicators, reinforcing the idea that scepticism remains a major barrier to wider AI adoption across the country.</p>
+                </div>
+                <div id="chart9"></div>
+                <p id="datasource">Source: University of Melbourne/KPMG Trust in AI report</p>
             </article>
-            <article class="placeholder-card" id="chart10">
-                <h3>Capability Profile</h3>
-                <p>Reserved for a radar chart comparing Australia's AI strengths and weaknesses.</p>
-            </article>
-            <article class="placeholder-card" id="chart11">
-                <h3>Sector Readiness</h3>
-                <p>Reserved for a heatmap showing readiness across sectors and dimensions.</p>
+
+            <article class="placeholder-card">
+                <div class="chart-header stacked">
+                    <h3>Capability and Confidence in AI Adoption</h3>
+                    <p>Australia has seen major growth in AI adoption between 2022 and 2024, especially in organisations and employee use at work. However, areas like trust in Awareness, Trust, AI knowledge, and support from organisations have changed very little or decreased. 
+                    This shows that while AI is becoming more common in workplaces, confidence and understanding of the technology are not increasing at the same pace.</p>
+                </div>
+                <div id="chart10"></div>
+                <div id="chart10-controls" class="chart-controls-below"></div>
+                <p id="datasource">Used Vega instead of Vegalite</p>
+                <p id="datasource">Vega Source: <a href="https://vega.github.io/vega/examples/radar-chart/"> Radar Chart</a></p>
             </article>
         </div>
+
+        <article class="placeholder-card">
+            <div class="chart-header stacked">
+                <h3>Sector Readiness</h3>
+                <p>Reserved for a heatmap showing readiness across sectors and dimensions.</p>
+            </div>
+            <div id="chart11"></div>
+        </article>
+        
     </section>
 
     <!--SECTION 4: AI Impact in Australia -->
@@ -273,6 +295,26 @@
     <!-- Bar-Line Chart -->
     <script>
         vegaEmbed('#chart7', 'js/bar-line.json', {actions: false}).catch(function(err){
+            console.error('Vega embed error:', err);
+        });
+    </script>
+
+    <!-- Horizontal-Bar Chart -->
+    <script>
+        vegaEmbed('#chart9', 'js/hori-bar.json', {actions: false}).catch(function(err){
+            console.error('Vega embed error:', err);
+        });
+    </script>
+
+    <!-- Radar Chart -->
+    <script>
+        vegaEmbed('#chart10', 'js/Radar.json', {actions: false, bind: '#chart10-controls'}).then(function(){
+            const generatedControls = document.querySelector('#chart10 .vega-bindings');
+            const controlsTarget = document.getElementById('chart10-controls');
+            if (generatedControls && controlsTarget && !controlsTarget.contains(generatedControls)) {
+                controlsTarget.appendChild(generatedControls);
+            }
+        }).catch(function(err){
             console.error('Vega embed error:', err);
         });
     </script>

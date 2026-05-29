@@ -1,0 +1,134 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "description": "Horizontal bar chart comparing Australian public perceptions of AI between 2022 and 2024.",
+
+  "background": "transparent",
+
+  "width": 760,
+  "height": 360,
+
+
+  "data": {
+    "values": [
+
+      {"Indicator":"Reliance","Year":"2022","MeanScore":3.9},
+      {"Indicator":"Reliance","Year":"2024","MeanScore":3.5},
+
+      {"Indicator":"Trustworthiness","Year":"2022","MeanScore":4.6},
+      {"Indicator":"Trustworthiness","Year":"2024","MeanScore":4.2},
+
+      {"Indicator":"Worry","Year":"2022","MeanScore":2.8},
+      {"Indicator":"Worry","Year":"2024","MeanScore":3.0},
+
+      {"Indicator":"Risks","Year":"2022","MeanScore":3.2},
+      {"Indicator":"Risks","Year":"2024","MeanScore":3.5},
+
+      {"Indicator":"Risk-Benefit Concern","Year":"2022","MeanScore":4.0},
+      {"Indicator":"Risk-Benefit Concern","Year":"2024","MeanScore":3.6},
+
+      {"Indicator":"Adequacy of Safeguards","Year":"2022","MeanScore":3.7},
+      {"Indicator":"Adequacy of Safeguards","Year":"2024","MeanScore":3.4}
+    ]
+  },
+
+  "mark": {
+    "type": "bar",
+    "cornerRadiusTopLeft": 6,
+    "cornerRadiusTopRight": 6,
+    "size": 53
+  },
+
+  "encoding": {
+
+    "x": {
+      "field": "Indicator",
+      "type": "nominal",
+
+      "sort": [
+        "Trustworthiness",
+        "Risk-Benefit Concern",
+        "Reliance",
+        "Adequacy of Safeguards",
+        "Risks",
+        "Worry"
+      ],
+
+      "axis": {
+        "title": "Key Indicators",
+        "labelAngle":0,
+        "labelFontStyle": "Akt, sans-serif",
+        "labelColor": "white",
+        "titleColor": "white",
+        "domain": false,
+        "ticks": false
+      }
+    },
+
+    "xOffset": {
+      "field": "Year"
+    },
+
+    "y": {
+      "field": "MeanScore",
+      "type": "quantitative",
+
+      "scale": {
+        "domain": [0, 10]
+      },
+
+      "axis": {
+        "title": "Mean Score",
+
+        "labelColor": "white",
+        "titleColor": "white",
+
+        "grid": true,
+        "gridColor": "#42557B",
+        "gridOpacity": 0.5,
+
+        "domain": false
+      }
+    },
+
+    "color": {
+      "field": "Year",
+      "type": "nominal",
+
+    "legend": {
+      "title": "Survey Year",
+
+      "orient": "top",
+      "direction": "horizontal",
+
+      "labelColor": "white",
+      "titleColor": "white",
+
+      "symbolType": "square",
+      "symbolSize": 180
+    },
+      "scale": {
+        "domain": ["2022", "2024"],
+        "range": ["#F4A261", "#CBF7ED"]
+      }
+    },
+    "tooltip": [
+      {
+        "field": "Indicator",
+        "type": "nominal",
+        "title": "Indicator"
+      },
+      {
+        "field": "Year",
+        "type": "nominal",
+        "title": "Survey Year"
+      },
+      {
+        "field": "MeanScore",
+        "type": "quantitative",
+        "title": "Mean Score",
+        "format": ".1f"
+      }
+    ]
+  }
+}

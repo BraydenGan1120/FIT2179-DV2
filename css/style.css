@@ -223,6 +223,12 @@ a {
     margin-top: 20px;
 }
 
+.chartrow-bar {
+    grid-template-columns: minmax(0, 1.25fr) minmax(420px, 0.75fr);
+    align-items: stretch;
+    margin-bottom: 20px;
+}
+
 .chart-container,
 .chart-container2 {
     min-width: 0;
@@ -475,6 +481,14 @@ select {
         grid-template-columns: 1fr;
     }
 
+    .chartrow-waffle{
+        grid-template-columns: 1fr;
+    }
+
+    .chartrow-bar{
+        grid-template-columns: 1fr;
+    }
+
     .chart-container-donut {
         width: min(680px, 100%);
         min-height: auto;
@@ -485,6 +499,8 @@ select {
     .stats-row,
     .chartrow-global,
     .chartrow-australia,
+    .chartrow-waffle
+    .chartrow-bar
     .placeholder-grid,
     .placeholder-grid.three-col {
         grid-template-columns: 1fr;
