@@ -195,8 +195,9 @@ a {
 }
 
 .section-intro p {
-    max-width: 920px;
-    font-size: 1.04rem;
+    font-family: "Akt", sans-serif;
+    max-width: 1600px;
+    font-size: 1.1rem;
     margin-top: 0.85rem;
 }
 
