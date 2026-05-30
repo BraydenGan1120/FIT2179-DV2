@@ -104,6 +104,7 @@ a {
 }
 .hero-copy {
     max-width: 920px;
+    font-family: "Akt", sans-serif;
     margin-top: 1.25rem;
     color: var(--Muted);
     font-size: clamp(1rem, 2vw, 1.28rem);
@@ -462,6 +463,10 @@ select {
 .footer p {
     color: var(--MLB);
     font-size: 0.86rem;
+}
+
+#data-source-title{
+    text-align:center
 }
 
 .footer p + p {
