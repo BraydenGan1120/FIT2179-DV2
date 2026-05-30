@@ -230,6 +230,12 @@ a {
     margin-bottom: 20px;
 }
 
+.chartrow-plot {
+    grid-template-columns: minmax(0, 0.7fr) minmax(420px, 1.3fr);
+    align-items: stretch;
+    margin-bottom: 20px;
+}
+
 .chart-container,
 .chart-container2 {
     min-width: 0;
@@ -301,6 +307,7 @@ select {
 #chart2,
 #chart5,
 #chart11,
+#chart13,
 #chart6 {
     width: 100%;
     overflow: hidden;
@@ -338,7 +345,8 @@ select {
 .vega-embed > div,
 .vega-embed details,
 #choropleth > div,
-#chart11 > div
+#chart11 > div,
+#chart13 > div,
 #chart2 > div,
 #chart5 > div,
 #chart6 > div {
@@ -347,6 +355,7 @@ select {
 
 #choropleth canvas,
 #chart11 canvas,
+#chart13 canvas,
 #choropleth svg,
 #chart2 canvas,
 #chart2 svg,
@@ -491,6 +500,7 @@ select {
 
     .chartrow-waffle, 
     .chartrow-bar, 
+    .chartrow-plot,
     .heatmap-chart{
         grid-template-columns: 1fr;
     }
@@ -505,8 +515,9 @@ select {
     .stats-row,
     .chartrow-global,
     .chartrow-australia,
-    .chartrow-waffle
-    .chartrow-bar
+    .chartrow-waffle,
+    .chartrow-bar,
+    .chartrow-plot,
     .heatmap-chart,
     .placeholder-grid,
     .placeholder-grid.three-col {

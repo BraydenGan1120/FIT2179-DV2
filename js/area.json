@@ -1,0 +1,173 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "transparent",
+  "width": "container",
+  "height": 420,
+
+  "data": {
+    "values": [
+
+      {"Country":"Australia","Year":2021,"Revenue":1.77},
+      {"Country":"Australia","Year":2022,"Revenue":2.42},
+      {"Country":"Australia","Year":2023,"Revenue":3.31},
+      {"Country":"Australia","Year":2024,"Revenue":4.54},
+      {"Country":"Australia","Year":2025,"Revenue":6.21},
+      {"Country":"Australia","Year":2026,"Revenue":8.48},
+      {"Country":"Australia","Year":2027,"Revenue":11.59},
+      {"Country":"Australia","Year":2028,"Revenue":15.85},
+      {"Country":"Australia","Year":2029,"Revenue":21.67},
+      {"Country":"Australia","Year":2030,"Revenue":29.62},
+      {"Country":"Australia","Year":2031,"Revenue":40.49},
+      {"Country":"Australia","Year":2032,"Revenue":55.35},
+      {"Country":"Australia","Year":2033,"Revenue":75.67},
+
+      {"Country":"United States","Year":2021,"Revenue":33.98},
+      {"Country":"United States","Year":2022,"Revenue":42.13},
+      {"Country":"United States","Year":2023,"Revenue":52.24},
+      {"Country":"United States","Year":2024,"Revenue":64.78},
+      {"Country":"United States","Year":2025,"Revenue":81.00},
+      {"Country":"United States","Year":2026,"Revenue":100.44},
+      {"Country":"United States","Year":2027,"Revenue":124.55},
+      {"Country":"United States","Year":2028,"Revenue":154.44},
+      {"Country":"United States","Year":2029,"Revenue":191.51},
+      {"Country":"United States","Year":2030,"Revenue":237.47},
+      {"Country":"United States","Year":2031,"Revenue":294.46},
+      {"Country":"United States","Year":2032,"Revenue":365.13},
+      {"Country":"United States","Year":2033,"Revenue":452.76},
+
+      {"Country":"China","Year":2021,"Revenue":10.15},
+      {"Country":"China","Year":2022,"Revenue":13.49},
+      {"Country":"China","Year":2023,"Revenue":17.92},
+      {"Country":"China","Year":2024,"Revenue":23.84},
+      {"Country":"China","Year":2025,"Revenue":31.61},
+      {"Country":"China","Year":2026,"Revenue":42.12},
+      {"Country":"China","Year":2027,"Revenue":55.82},
+      {"Country":"China","Year":2028,"Revenue":74.19},
+      {"Country":"China","Year":2029,"Revenue":98.60},
+      {"Country":"China","Year":2030,"Revenue":131.04},
+      {"Country":"China","Year":2031,"Revenue":174.15},
+      {"Country":"China","Year":2032,"Revenue":231.45},
+      {"Country":"China","Year":2033,"Revenue":307.60},
+
+      {"Country":"France","Year":2021,"Revenue":4.86},
+      {"Country":"France","Year":2022,"Revenue":6.36},
+      {"Country":"France","Year":2023,"Revenue":8.33},
+      {"Country":"France","Year":2024,"Revenue":10.96},
+      {"Country":"France","Year":2025,"Revenue":14.33},
+      {"Country":"France","Year":2026,"Revenue":18.76},
+      {"Country":"France","Year":2027,"Revenue":24.56},
+      {"Country":"France","Year":2028,"Revenue":32.15},
+      {"Country":"France","Year":2029,"Revenue":42.08},
+      {"Country":"France","Year":2030,"Revenue":55.09},
+      {"Country":"France","Year":2031,"Revenue":72.12},
+      {"Country":"France","Year":2032,"Revenue":94.41},
+      {"Country":"France","Year":2033,"Revenue":123.58}
+
+    ]
+  },
+
+  "params": [
+    {
+      "name": "CountrySelect",
+      "select": {
+        "type": "point",
+        "fields": ["Country"]
+      },
+      "bind": "legend"
+    }
+  ],
+
+  "mark": {
+    "type": "area",
+    "interpolate": "monotone",
+    "opacity": 0.8
+  },
+
+  "encoding": {
+
+    "x": {
+      "field": "Year",
+      "type": "ordinal",
+      "axis": {
+        "title": "Year",
+        "labelColor": "white",
+        "titleColor": "white",
+        "grid": false
+      }
+    },
+
+    "y": {
+      "field": "Revenue",
+      "type": "quantitative",
+      "stack": "zero",
+      "axis": {
+        "title": "Market Size (USD Billion)",
+        "labelColor": "white",
+        "titleColor": "white",
+        "grid": true,
+        "gridColor": "#42557B",
+        "gridOpacity": 0.4
+      }
+    },
+
+    "color": {
+      "field": "Country",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Australia",
+          "United States",
+          "China",
+          "France"
+        ],
+        "scheme": "oranges"
+      },
+      "legend": {
+        "title": null,
+        "orient": "bottom",
+        "direction": "horizontal",
+        "labelColor": "white",
+        "symbolType": "square"
+      }
+    },
+
+    "opacity": {
+      "condition": {
+        "param": "CountrySelect",
+        "value": 1
+      },
+      "value": 0.25
+    },
+
+    "tooltip": [
+      {
+        "field": "Country",
+        "title": "Country"
+      },
+      {
+        "field": "Year",
+        "title": "Year"
+      },
+      {
+        "field": "Revenue",
+        "title": "Market Size (USD B)",
+        "format": ".2f"
+      }
+    ]
+  },
+
+  "config": {
+    "view": {
+      "stroke": null
+    },
+
+    "axis": {
+      "labelFont": "Akt, sans-serif",
+      "titleFont": "Akt, sans-serif"
+    },
+
+    "legend": {
+      "labelFont": "Akt, sans-serif"
+    }
+  }
+}

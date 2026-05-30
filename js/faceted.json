@@ -1,0 +1,425 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "background": "transparent",
+
+
+  "data": {
+    "values": [
+
+      {
+        "Cohort": "Women",
+        "Occupation": "Sales Assistants",
+        "Share": 5.9,
+        "Augmentation": "Medium",
+        "Automation": "Low"
+      },
+
+      {
+        "Cohort": "Women",
+        "Occupation": "Registered Nurses",
+        "Share": 4.0,
+        "Augmentation": "Medium",
+        "Automation": "Low"
+      },
+
+      {
+        "Cohort": "Women",
+        "Occupation": "Genereal Clerks",
+        "Share": 3.7,
+        "Augmentation": "Medium",
+        "Automation": "High"
+      },
+
+      {
+        "Cohort": "Women",
+        "Occupation": "Aged & Disabled Carers",
+        "Share": 3.0,
+        "Augmentation": "Low",
+        "Automation": "Very Low"
+      },
+
+      {
+        "Cohort": "Women",
+        "Occupation": "Child Carers",
+        "Share": 2.7,
+        "Augmentation": "Medium",
+        "Automation": "Very Low"
+      },
+
+      {
+        "Cohort": "Women",
+        "Occupation": "Receptionists",
+        "Share": 2.6,
+        "Augmentation": "Medium",
+        "Automation": "Medium"
+      },
+
+      {
+        "Cohort": "Women",
+        "Occupation": "Primary School Teachers",
+        "Share": 2.4,
+        "Augmentation": "Medium",
+        "Automation": "Low"
+      },
+
+      {
+        "Cohort": "Women",
+        "Occupation": "Office Managers",
+        "Share": 1.7,
+        "Augmentation": "High",
+        "Automation": "Low"
+      },
+
+       {
+        "Cohort": "Women",
+        "Occupation": "Retail Managers",
+        "Share": 1.7,
+        "Augmentation": "High",
+        "Automation": "Low"
+      },
+
+      {
+        "Cohort": "Women",
+        "Occupation": "Secondary School Teachers",
+        "Share": 1.7,
+        "Augmentation": "Medium",
+        "Automation": "Low"
+      },
+
+      {
+        "Cohort": "Young Workers (15-24)",
+        "Occupation": "Sales Assistants",
+        "Share": 14.8,
+        "Augmentation": "Medium",
+        "Automation": "Low"
+      },
+
+      {
+        "Cohort": "Young Workers (15-24)",
+        "Occupation": "Kitchenhands",
+        "Share": 3.5,
+        "Augmentation": "Medium",
+        "Automation": "Very Low"
+      },
+
+      {
+        "Cohort": "Young Workers (15-24)",
+        "Occupation": "Checkout Operators & Office Cashiers",
+        "Share": 3.3,
+        "Augmentation": "Medium",
+        "Automation": "Medium"
+      },
+
+      {
+        "Cohort": "Young Workers (15-24)",
+        "Occupation": "Waiters",
+        "Share": 3.3,
+        "Augmentation": "Low",
+        "Automation": "Low"
+      },
+
+      {
+        "Cohort": "Young Workers (15-24)",
+        "Occupation": "Bar Attendants & Baristas",
+        "Share": 2.8,
+        "Augmentation": "Low",
+        "Automation": "Very Low"
+      },
+
+      {
+        "Cohort": "Young Workers (15-24)",
+        "Occupation": "Child Carers",
+        "Share": 2.4,
+        "Augmentation": "Medium",
+        "Automation": "Very Low"
+      },
+
+      {
+        "Cohort": "Young Workers (15-24)",
+        "Occupation": "Fast Food Cooks",
+        "Share": 2.2,
+        "Augmentation": "Medium",
+        "Automation": "Low"
+      },
+
+      {
+        "Cohort": "Young Workers (15-24)",
+        "Occupation": "Receptionists",
+        "Share": 2.1,
+        "Augmentation": "Medium",
+        "Automation": "Medium"
+      },
+
+       {
+        "Cohort": "Young Workers (15-24)",
+        "Occupation": "Carpenters & Joiners",
+        "Share": 1.9,
+        "Augmentation": "Medium",
+        "Automation": "Very Low"
+      },
+
+      {
+        "Cohort": "Young Workers (15-24)",
+        "Occupation": "Storepersons",
+        "Share": 1.8,
+        "Augmentation": "Medium",
+        "Automation": "Low"
+      },
+
+      {
+        "Cohort": "First Nation Workers",
+        "Occupation": "Sales Assistants",
+        "Share": 5.4,
+        "Augmentation": "Medium",
+        "Automation": "Low"
+      },
+
+      {
+        "Cohort": "First Nation Workers",
+        "Occupation": "Aged & Disabled Carers",
+        "Share": 2.8,
+        "Augmentation": "Low",
+        "Automation": "Very Low"
+      },
+
+      {
+        "Cohort": "First Nation Workers",
+        "Occupation": "Genereal Clerks",
+        "Share": 2.5,
+        "Augmentation": "Medium",
+        "Automation": "High"
+      },
+
+      {
+        "Cohort": "First Nation Workers",
+        "Occupation": "Education Aides",
+        "Share": 2.3,
+        "Augmentation": "Medium",
+        "Automation": "Low"
+      },
+
+      {
+        "Cohort": "First Nation Workers",
+        "Occupation": "Truck Drivers",
+        "Share": 2.2,
+        "Augmentation": "Medium",
+        "Automation": "Very Low"
+      },
+
+      {
+        "Cohort": "First Nation Workers",
+        "Occupation": "Welfare Support Workers",
+        "Share": 2.2,
+        "Augmentation": "Medium",
+        "Automation": "Low"
+      },
+
+      {
+        "Cohort": "First Nation Workers",
+        "Occupation": "Child Carers",
+        "Share": 1.9,
+        "Augmentation": "Medium",
+        "Automation": "Very Low"
+      },
+
+      {
+        "Cohort": "First Nation Workers",
+        "Occupation": "Commercial Cleaners",
+        "Share": 1.8,
+        "Augmentation": "Low",
+        "Automation": "Very Low"
+      },
+
+       {
+        "Cohort": "First Nation Workers",
+        "Occupation": "Receptionists",
+        "Share": 1.6,
+        "Augmentation": "Medium",
+        "Automation": "Medium"
+      },
+
+      {
+        "Cohort": "First Nation Workers",
+        "Occupation": "Drillers, Miners, and Shot Firers",
+        "Share": 1.5,
+        "Augmentation": "Medium",
+        "Automation": "Very Low"
+      }
+
+    ]
+  },
+
+  "facet": {
+    "column": {
+      "field": "Cohort",
+      "title": null,
+      "header": {
+        "labelColor": "#FFFFFF",
+        "labelFontSize": 14,
+        "labelFontWeight": "bold"
+      }
+    }
+  },
+
+  "spec": {
+
+    "width": 180,
+    "height":300,
+
+    "layer": [
+
+      {
+        "mark": {
+          "type": "rule",
+          "strokeWidth": 2,
+          "color": "#42557B"
+        },
+
+        "encoding": {
+          "x": {
+            "value": 0
+          },
+
+          "x2": {
+            "field": "Share"
+          },
+
+          "y": {
+            "field": "Occupation",
+            "type": "nominal",
+            "sort": "-x",
+            "axis": {
+              "title": null,
+              "labelColor": "white",
+              "labelLimit": 180
+            }
+          }
+        }
+      },
+
+      {
+        "mark": {
+          "type": "point",
+          "filled": true,
+          "size": 180
+        },
+
+        "encoding": {
+
+          "x": {
+            "field": "Share",
+            "type": "quantitative",
+            "axis": {
+              "title": "Share of Cohort Workforce (%)",
+              "titleColor": "white",
+              "labelColor": "white",
+              "gridColor": "#42557B",
+              "tickColor": "#42557B",
+              "domainColor": "#42557B"
+            }
+          },
+
+          "y": {
+            "field": "Occupation",
+            "type": "nominal",
+            "sort": "-x"
+          },
+
+          "color": {
+            "field": "Augmentation",
+            "type": "nominal",
+            "scale": {
+              "domain": [
+                "Low",
+                "Medium",
+                "High"
+              ],
+              "range": [
+                "#CBF7ED",
+                "#F2A65A",
+                "#E67E22"
+              ]
+            },
+
+            "legend": {
+              "title": "AI Augmentation",
+              "orient": "bottom",
+              "labelColor": "white",
+              "titleColor": "white"
+            }
+          },
+
+          "shape": {
+            "field": "Automation",
+            "type": "nominal",
+
+            "scale": {
+              "domain": [
+                "Very Low",
+                "Low",
+                "Medium",
+                "High"
+              ],
+
+              "range": [
+                "circle",
+                "square",
+                "diamond",
+                "triangle-up"
+              ]
+            },
+
+            "legend": {
+              "title": "Automation Exposure",
+              "orient": "bottom",
+              "labelColor": "white",
+              "titleColor": "white"
+            }
+          },
+
+          "tooltip": [
+            {
+              "field": "Occupation"
+            },
+            {
+              "field": "Cohort"
+            },
+            {
+              "field": "Share",
+              "title": "Share (%)"
+            },
+            {
+              "field": "Augmentation"
+            },
+            {
+              "field": "Automation"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "resolve": {
+    "scale": {
+      "y": "independent"
+    }
+  },
+
+  "config": {
+
+    "view": {
+      "stroke": null
+    },
+
+    "axis": {
+      "grid": true
+    },
+
+    "legend": {
+      "labelColor": "white",
+      "titleColor": "white"
+    }
+  }
+}

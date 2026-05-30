@@ -206,21 +206,43 @@
             <p>Here's a deeper look.</p>
         </div>
 
-        <div class="placeholder-grid three-col">
-            <article class="placeholder-card" id="chart12">
-                <h3>Economic Impact</h3>
-                <p>Reserved for a stacked area chart tracking AI-related change over time.</p>
+        <div class="chartrow chartrow-plot">
+            <article class="placeholder-card">
+                <div class="chart-header stacked">
+                    <h3>AI Market</h3>
+                    <p>AI investment and adoption are growing quickly around the world. Although the United States leads in market size, Australia, China, and France are also expected to see strong growth (increasing exponentially) as AI becomes more widely used across industries.</p>
+                    <br>
+                    <p>This rapid growth of AI markets suggests more opportunities for jobs, investment, and innovation in the future.</p>
+                </div>
+                <div id="chart12"></div>
             </article>
-            <article class="placeholder-card" id="chart13">
-                <h3>Workforce Exposure</h3>
-                <p>Reserved for a dot strip plot comparing exposure across job groups.</p>
-            </article>
-            <article class="placeholder-card" id="chart14">
-                <h3>Industry Gains</h3>
-                <p>Reserved for a lollipop chart ranking industries by AI impact.</p>
+            
+            <article class="chart-container chart-container-large">
+                <div class="chart-header stacked">
+                    <h3>Workforce Exposure Insights</h3>
+                    <p>This chart shows how different workforce groups may be affected by generative AI based on both their exposure to AI-driven task augmentation and their ability to move into other occupations.</p>
+                    <br>
+                    
+                    <p><u><b>&middot; Higher Augmentation & Higher Mobility:</u> </b>likely to see significant AI integration in their current roles, but also have strong opportunities to transition into other occupations as the labour market evolves.</p>
+                    <p><u><b>&middot; Higher Augmentation & Lower Mobility:</u> </b>may benefit from AI tools in their jobs, but face fewer alternative career pathways if their roles change.</p>
+                    <p><u><b>&middot; Lower Augmentation & Lower Mobility:</u> </b>more resilient to AI disruption because their work is less exposed to automation and they have greater occupational flexibility.</p>
+                    <p><u><b>&middot; Lower Augmentation & Higher Mobility:</u> </b>relatively insulated from the immediate impacts of generative AI, as their roles have limited exposure to AI augmentation and are less likely to experience substantial change.</p>
+                </div>
+                <div id="chart13"></div>
             </article>
         </div>
+
+        <article class="chart-container chart-container-large">
+            <div class="chart-header stacked">
+                <h3>Industry Gains</h3>
+                <p>Reserved for a lollipop chart ranking industries by AI impact.</p>
+            </div>
+            <div id="chart14"></div>
+        </article>
+
     </section>
+
+    
 
     <!-- FOOTER -->
     <footer class="footer">
@@ -228,6 +250,7 @@
         <p><a href="https://oxfordinsights.com/ai-readiness/government-ai-readiness-index-2025/">Oxford Insights Government AI Readiness Index (2023, 2024, 2025)</a> &middot; University of Melbourne/KPMG: Trust, attitudes and use of artificial intelligence report (<a href="https://kpmg.com/xx/en/our-insights/ai-and-technology/trust-attitudes-and-use-of-ai.html">2025</a>) &middot; National AI Centre: AI Adoption Tracker (<a href="https://www.ai.gov.au/news-and-insights/reports/ai-adoption-tracker">2025</a>)</p>
         <p>KPMG Global AI in Finance Report (<a href="https://kpmg.com/au/en/insights/artificial-intelligence-ai/ai-in-finance-report.html">2026</a>) &middot; INFORM: AI Readiness in Australian Organisations (<a href="https://www.inform-software.com/en/lp/a-report-ai-readiness-in-australian-organisations">2024</a>) &middot; Jobs & Skills Australia: Our Gen AI Transition [<a href="https://www.jobsandskills.gov.au/publications/our-gen-ai-transition-final-release">Final</a> & <a href="https://www.jobsandskills.gov.au/publications/generative-ai-capacity-study-report">Non-Final</a> Release] (August 2025 & Septemeber 2025)</p>
         <p>Grand View Horizon: Australia AI Market Size & Outlook (<a href="https://www.grandviewresearch.com/horizon/outlook/artificial-intelligence-market/australia">2025</a>)</p>
+        <br>
         <p class="author">Created by Brayden Gan &middot; 35684534 &middot; FIT2179 Data Visualization II &middot; 29 May 2026 &middot; <a href="https://github.com/braydengan1120">GitHub</a></p>
     </footer>
 
@@ -330,6 +353,27 @@
     <!-- Heatmap Chart -->
     <script>
         vegaEmbed('#chart11', 'js/heatmap.json', {actions: false}).catch(function(err){
+            console.error('Vega embed error:', err);
+        });
+    </script>
+
+    <!-- Area Chart -->
+    <script>
+        vegaEmbed('#chart12', 'js/area.json', {actions: false}).catch(function(err){
+            console.error('Vega embed error:', err);
+        });
+    </script>
+
+    <!-- Dotplot Chart -->
+    <script>
+        vegaEmbed('#chart13', 'js/dotplot.json', {actions: false}).catch(function(err){
+            console.error('Vega embed error:', err);
+        });
+    </script>
+
+    <!-- Faceted Dotplot Chart -->
+    <script>
+        vegaEmbed('#chart14', 'js/faceted.json', {actions: false}).catch(function(err){
             console.error('Vega embed error:', err);
         });
     </script>

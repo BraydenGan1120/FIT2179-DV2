@@ -1,0 +1,140 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "transparent",
+  "width": 700,
+  "height": 260,
+
+
+  "data": {
+    "values": [
+
+      {"Group":"Women","Category":"Higher Augmentation & Higher Mobility","Share":51},
+      {"Group":"Women","Category":"Higher Augmentation & Lower Mobility","Share":11},
+      {"Group":"Women","Category":"Lower Augmentation & Higher Mobility","Share":34},
+      {"Group":"Women","Category":"Lower Augmentation & Lower Mobility","Share":4},
+
+      {"Group":"Men","Category":"Higher Augmentation & Higher Mobility","Share":38},
+      {"Group":"Men","Category":"Higher Augmentation & Lower Mobility","Share":8},
+      {"Group":"Men","Category":"Lower Augmentation & Higher Mobility","Share":43},
+      {"Group":"Men","Category":"Lower Augmentation & Lower Mobility","Share":11},
+
+      {"Group":"Young Workers (15-24)","Category":"Higher Augmentation & Higher Mobility","Share":23},
+      {"Group":"Young Workers (15-24)","Category":"Higher Augmentation & Lower Mobility","Share":4},
+      {"Group":"Young Workers (15-24)","Category":"Lower Augmentation & Higher Mobility","Share":67},
+      {"Group":"Young Workers (15-24)","Category":"Lower Augmentation & Lower Mobility","Share":6},
+
+      {"Group":"First Nations Workers","Category":"Higher Augmentation & Higher Mobility","Share":35},
+      {"Group":"First Nations Workers","Category":"Higher Augmentation & Lower Mobility","Share":7},
+      {"Group":"First Nations Workers","Category":"Lower Augmentation & Higher Mobility","Share":50},
+      {"Group":"First Nations Workers","Category":"Lower Augmentation & Lower Mobility","Share":9}
+
+    ]
+  },
+
+  "mark": {
+    "type": "circle",
+    "size": 220,
+    "opacity": 0.95,
+    "stroke": "white",
+    "strokeWidth": 1
+  },
+
+  "encoding": {
+
+    "y": {
+      "field": "Group",
+      "type": "nominal",
+      "sort": [
+        "Women",
+        "Men",
+        "Young Workers (15-24)",
+        "First Nations Workers"
+      ],
+      "axis": {
+        "title": "Workforce Group",
+        "labelColor": "white",
+        "titleColor": "white",
+        "domain": false,
+        "ticks": false,
+        "labelFontSize": 12,
+        "titleFontSize": 13
+      }
+    },
+
+    "x": {
+      "field": "Share",
+      "type": "quantitative",
+      "title": "Share of Workforce (%)",
+      "scale": {
+        "domain": [0, 70]
+      },
+      "axis": {
+        "labelColor": "white",
+        "titleColor": "white",
+        "grid": true,
+        "gridColor": "#42557B",
+        "gridOpacity": 0.5,
+        "domain": false
+      }
+    },
+
+    "color": {
+      "field": "Category",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Higher Augmentation & Higher Mobility",
+          "Higher Augmentation & Lower Mobility",
+          "Lower Augmentation & Higher Mobility",
+          "Lower Augmentation & Lower Mobility"
+        ],
+        "range": [
+          "#E67E22",
+          "#F4A261",
+          "#CBF7ED",
+          "#8EC5D6"
+        ]
+      },
+      "legend": {
+        "title": "Exposure Category",
+        "orient": "bottom",
+        "direction": "vertical",
+        "labelFont": "akt, sans-serif",
+        "labelColor": "white",
+        "titleColor": "white",
+        "symbolSize": 200,
+        "labelLimit":300,
+        "columnPadding":20,
+        "rowPadding":20,
+        "offset":20,
+        "labelFontSize":12
+      }
+    },
+
+    "shape": {
+      "field": "Category",
+      "legend": null
+    },
+
+    "tooltip": [
+      {
+        "field": "Group",
+        "title": "Workforce Group"
+      },
+      {
+        "field": "Category",
+        "title": "Exposure Category"
+      },
+      {
+        "field": "Share",
+        "title": "Share (%)"
+      }
+    ]
+  },
+
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}
