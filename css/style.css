@@ -307,6 +307,7 @@ select {
 #chart2,
 #chart5,
 #chart11,
+#chart14,
 #chart13,
 #chart6 {
     width: 100%;
@@ -346,6 +347,7 @@ select {
 .vega-embed details,
 #choropleth > div,
 #chart11 > div,
+#chart14 > div,
 #chart13 > div,
 #chart2 > div,
 #chart5 > div,
@@ -355,6 +357,7 @@ select {
 
 #choropleth canvas,
 #chart11 canvas,
+#chart14 canvas,
 #chart13 canvas,
 #choropleth svg,
 #chart2 canvas,
